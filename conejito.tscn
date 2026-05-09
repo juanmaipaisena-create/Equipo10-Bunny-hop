@@ -1,16 +1,8 @@
-<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://cutrr7wi8bbju"]
 
 [ext_resource type="Script" uid="uid://m4ujbh7ndiyn" path="res://movimiento script.gd" id="1_tpupi"]
 [ext_resource type="Texture2D" uid="uid://dwu3gsq4jki5c" path="res://Characters/Conejo/Sprite-conejito-idle-Sheet.png" id="2_kc7of"]
 [ext_resource type="Texture2D" uid="uid://btbjvosom6k3i" path="res://Characters/Conejo/(C)Sprite-conejo-caminata.png" id="3_583ku"]
-=======
-[gd_scene format=3 uid="uid://boj1kx3kp1kov"]
-
-[ext_resource type="Script" uid="uid://ccjah3liywvc4" path="res://movimiento script.gd" id="1_tpupi"]
-[ext_resource type="Texture2D" path="res://Characters/Conejo/Sprite-conejito-idle-Sheet.png" id="2_kc7of"]
-[ext_resource type="Texture2D" path="res://Characters/Conejo/(C)Sprite-conejo-caminata.png" id="3_583ku"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwiel"]
 atlas = ExtResource("2_kc7of")
@@ -170,28 +162,17 @@ animations = [{
 radius = 7.071068
 
 [node name="ConejoBody2D" type="CharacterBody2D" unique_id=1904383855]
-<<<<<<< Updated upstream
-position = Vector2(402, 219)
-scale = Vector2(2, 2)
-=======
 position = Vector2(432, 243)
 scale = Vector2(1.5, 1.5)
->>>>>>> Stashed changes
 script = ExtResource("1_tpupi")
 metadata/_edit_group_ = true
 
 [node name="ConejoAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=711389314]
 sprite_frames = SubResource("SpriteFrames_qopjo")
 animation = &"Idle"
-<<<<<<< Updated upstream
-
-[node name="ConejoCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1276057290]
-position = Vector2(-1, 10)
-=======
 frame = 1
 frame_progress = 0.539018
 
 [node name="ConejoCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1276057290]
 position = Vector2(-0.5, 8.5)
->>>>>>> Stashed changes
 shape = SubResource("CircleShape2D_tpupi")

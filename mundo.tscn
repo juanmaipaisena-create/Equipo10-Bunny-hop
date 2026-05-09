@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://k1cf1ajncdi"]
 
-[ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo serpiente.tscn" id="2_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo_serpiente.tscn" id="2_fw4w5"]
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]

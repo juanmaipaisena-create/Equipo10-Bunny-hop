@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da6mcc8321cin"]
 
-[ext_resource type="Script" uid="uid://ccjah3liywvc4" path="res://movimiento script.gd" id="1_kdei8"]
+[ext_resource type="Script" path="res://movimiento_script.gd" id="1_kdei8"]
 [ext_resource type="Texture2D" uid="uid://dwu3gsq4jki5c" path="res://CharactersSprites/Conejo/Sprite-conejito-idle-Sheet.png" id="1_rwaau"]
 [ext_resource type="Texture2D" uid="uid://gmjjbcwxliaf" path="res://CharactersSprites/Serpiente/Sprite-idle-serpiente-Sheet.png" id="2_kdei8"]
 [ext_resource type="Texture2D" uid="uid://iowjbv8u8j78" path="res://CharactersSprites/Cerdo/(C)Sprite-cerdito-caminata.png" id="3_1ovkj"]
