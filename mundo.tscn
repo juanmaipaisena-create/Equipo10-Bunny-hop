@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo_serpiente.tscn" id="2_fw4w5"]
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
+[ext_resource type="Script" uid="uid://8fnxym4spudp" path="res://Scripts/CharacterFunction/Serpiente/Serpiente.gd" id="2_otwa2"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
 [node name="SerpienteBody2D" parent="." unique_id=1554647834 instance=ExtResource("2_fw4w5")]
 position = Vector2(529.00006, 177)
+script = ExtResource("2_otwa2")
 
-[node name="ConejoBody2D" parent="." unique_id=262121097 instance=ExtResource("2_lgngo")]
+[node name="ConejoBody2D" parent="." unique_id=262121097 groups=["Player"] instance=ExtResource("2_lgngo")]
 position = Vector2(381, 349)
