@@ -19,6 +19,6 @@ func _movimiento() -> void:
 	#print(player.global_position)
 	#print("global_position")
 	#print(global_position)
-	velocity.normalized()
-	velocity = direccion * velocidad
+	#velocity.normalized()
+	velocity = direccion.normalized() * velocidad
 	move_and_slide()
