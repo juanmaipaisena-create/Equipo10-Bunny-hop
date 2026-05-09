@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c4xlul8isegeq"]
+
+[ext_resource type="Texture2D" uid="uid://eofplbx7ty21" path="res://CharactersSprites/Armas/pistola-Sheet.png" id="1_aposp"]
+[ext_resource type="Script" uid="uid://m7fmvfq5qovk" path="res://Scripts/CharacterFunction/Armas/arma_pistola.gd" id="1_meu16"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_meu16"]
+radius = 112.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twipk"]
+atlas = ExtResource("1_aposp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kurjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twipk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="armas" type="Area2D" unique_id=27617337]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_meu16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304746984]
+shape = SubResource("CircleShape2D_meu16")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1419846673]
+
+[node name="Pistola" type="AnimatedSprite2D" parent="Marker2D" unique_id=1441856988]
+position = Vector2(14, 1)
+sprite_frames = SubResource("SpriteFrames_kurjv")
+frame_progress = 0.22123706
+
+[node name="Punto de Disparo" type="Marker2D" parent="Marker2D/Pistola" unique_id=709951472]
+position = Vector2(6, 0)
