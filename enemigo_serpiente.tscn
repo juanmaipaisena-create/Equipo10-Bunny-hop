@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://de1pupyai8rgf"]
 
 [ext_resource type="Texture2D" uid="uid://gmjjbcwxliaf" path="res://CharactersSprites/Serpiente/Sprite-idle-serpiente-Sheet.png" id="1_bhs4r"]
+[ext_resource type="Script" uid="uid://8fnxym4spudp" path="res://Scripts/CharacterFunction/Serpiente/Serpiente.gd" id="1_tfflr"]
 [ext_resource type="Texture2D" uid="uid://dlqbljiwndt3b" path="res://CharactersSprites/Serpiente/Sprite-movimientoH-serpiente-Sheet.png" id="2_u4jas"]
 [ext_resource type="Texture2D" uid="uid://cng324b8vnuaq" path="res://CharactersSprites/Serpiente/Sprite-movimienoV-serpiente-Sheet.png" id="3_tcpjq"]
 
@@ -64,7 +65,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5n8d"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfflr"]
+radius = 6.0
 
 [sub_resource type="Animation" id="Animation_8jewq"]
 resource_name = "Idle"
@@ -187,8 +189,10 @@ _data = {
 }
 
 [node name="SerpienteBody2D" type="CharacterBody2D" unique_id=1554647834]
-position = Vector2(407, 203)
-scale = Vector2(1.5, 1.5)
+position = Vector2(407, 210)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_tfflr")
+velocidad = 60
 metadata/_edit_group_ = true
 
 [node name="SerpienteAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
@@ -200,8 +204,8 @@ frame = 1
 flip_h = true
 
 [node name="SerpienteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]
-position = Vector2(0, -1.2516975e-06)
-shape = SubResource("RectangleShape2D_y5n8d")
+position = Vector2(0.79999995, 4.7999988)
+shape = SubResource("CircleShape2D_tfflr")
 
 [node name="SerpienteAnimationPlayer" type="AnimationPlayer" parent="." unique_id=867313025]
 libraries/ = SubResource("AnimationLibrary_85l3h")
