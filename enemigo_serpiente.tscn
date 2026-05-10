@@ -191,6 +191,8 @@ _data = {
 [node name="SerpienteBody2D" type="CharacterBody2D" unique_id=1554647834]
 position = Vector2(407, 210)
 scale = Vector2(2.5, 2.5)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_tfflr")
 velocidad = 60
 metadata/_edit_group_ = true
