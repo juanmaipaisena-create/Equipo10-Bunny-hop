@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo_serpiente.tscn" id="2_fw4w5"]
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
+[ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
@@ -19,3 +20,6 @@ position = Vector2(769, 240)
 
 [node name="SerpienteBody2D4" parent="." unique_id=1449560161 instance=ExtResource("2_fw4w5")]
 position = Vector2(358, 92.00001)
+
+[node name="arbolito" parent="." unique_id=1110573105 instance=ExtResource("3_fw4w5")]
+position = Vector2(256, 365)
