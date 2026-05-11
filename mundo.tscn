@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo_serpiente.tscn" id="2_fw4w5"]
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
+[ext_resource type="Script" uid="uid://6r5ukawwku2b" path="res://wave_manager.gd" id="4_otwa2"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
@@ -12,14 +13,20 @@ position = Vector2(747, 98)
 [node name="ConejoBody2D" parent="." unique_id=262121097 groups=["Player"] instance=ExtResource("2_lgngo")]
 position = Vector2(381, 349)
 
-[node name="SerpienteBody2D2" parent="." unique_id=478440247 instance=ExtResource("2_fw4w5")]
-position = Vector2(617, 145)
-
-[node name="SerpienteBody2D3" parent="." unique_id=1133065528 instance=ExtResource("2_fw4w5")]
-position = Vector2(769, 240)
-
-[node name="SerpienteBody2D4" parent="." unique_id=1449560161 instance=ExtResource("2_fw4w5")]
-position = Vector2(358, 92.00001)
-
 [node name="arbolito" parent="." unique_id=1110573105 instance=ExtResource("3_fw4w5")]
 position = Vector2(256, 365)
+
+[node name="WaveManager" type="Node" parent="." unique_id=1068225077]
+script = ExtResource("4_otwa2")
+enemy_scene = ExtResource("2_fw4w5")
+
+[node name="SpawnPoints" type="Node2D" parent="WaveManager" unique_id=389698855]
+
+[node name="Spawn1" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1650890541]
+position = Vector2(24, 50)
+
+[node name="Spawn2" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=997558371]
+position = Vector2(26, 342)
+
+[node name="Spawn3" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1502301823]
+position = Vector2(635, 50)
