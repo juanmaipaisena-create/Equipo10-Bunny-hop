@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c06ktikrfef85"]
+
+[ext_resource type="Script" uid="uid://cvxikyjux63l2" path="res://Scripts/CharacterFunction/Armas/movimiento_bala.gd" id="1_ag3k0"]
+[ext_resource type="Texture2D" uid="uid://cqar7is1i22f2" path="res://CharactersSprites/Armas/Sprite-disparo.png" id="1_jk513"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag3k0"]
+atlas = ExtResource("1_jk513")
+region = Rect2(0, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqo1u"]
+atlas = ExtResource("1_jk513")
+region = Rect2(64, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4wd0"]
+atlas = ExtResource("1_jk513")
+region = Rect2(128, 0, 64, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8aw3"]
+atlas = ExtResource("1_jk513")
+region = Rect2(192, 0, 64, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hv006"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag3k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqo1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4wd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8aw3")
+}],
+"loop": true,
+"name": &"Movimiento_bala",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2pop"]
+size = Vector2(18, 8)
+
+[node name="Bala" type="Area2D" unique_id=1228280289]
+collision_layer = 4
+script = ExtResource("1_ag3k0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1681673305]
+position = Vector2(9, 0)
+scale = Vector2(0.28125, 1)
+sprite_frames = SubResource("SpriteFrames_hv006")
+animation = &"Movimiento_bala"
+frame = 3
+frame_progress = 0.40377113
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052500148]
+position = Vector2(9, 0)
+shape = SubResource("RectangleShape2D_f2pop")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
