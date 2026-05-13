@@ -1,18 +1,42 @@
 class_name ConejoPlayer
 extends CharacterBody2D
 
+@onready var animated_sprite = $ConejoAnimatedSprite2D
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown := 0.3
 var can_shoot := true
+var last_direction = "Down"
 
 func _physics_process(delta: float) -> void:
-	var direccion = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	velocity = direccion *230
-	velocity.normalized()
+	get_input()
 	move_and_slide()
 
-func _ready() -> void:
-	$ConejoAnimatedSprite2D.play("Idle")
+func get_input():
+	var direccion = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	
+	if direccion == Vector2.ZERO:
+		velocity = Vector2.ZERO
+		update_animation("Idle")
+		return
+	
+	if abs(direccion.x) > abs (direccion.y):
+		if direccion.x > 0:
+			last_direction = "Right"
+		else:
+			last_direction = "Left"
+	else:
+		if direccion.y > 0:
+			last_direction = "Down"
+		else:
+			last_direction = "Up"
+	update_animation("Run")
+	velocity = direccion *230
+	velocity.normalized()
+
+func update_animation(state):
+	animated_sprite.play(state + last_direction)
+#func _ready() -> void:
+#	$ConejoAnimatedSprite2D.play("Idle")
 
 func _process(delta):
 	if can_shoot:
