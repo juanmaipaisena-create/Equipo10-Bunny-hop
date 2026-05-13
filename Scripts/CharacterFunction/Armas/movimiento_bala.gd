@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed := 500.0
+@export var speed := 100.0
 @export var life_time := 2.0
 var direction := Vector2.RIGHT
 
@@ -8,7 +8,8 @@ var direction := Vector2.RIGHT
 	#position += direction * speed * delta
 	
 func _physics_process(delta):
-	position += direction * speed * delta
+	#position += direction * speed * delta
+	global_position += direction * speed * delta
 
 #las serpientes son empujadas y se siente mas mejor
 func _on_body_entered(body: Node2D) -> void:

@@ -2,7 +2,7 @@ class_name Serpiente
 extends CharacterBody2D
 
 @export var vida:int = 10
-@export var velocidad:int = 1
+@export var velocidad:float = 80.0
 @export var damage:int = 1
 @export var health := 3
 @export var knockback_resistance := 0.9
@@ -37,7 +37,7 @@ func _movimiento() -> void:
 	move_and_slide()
 	knockback_velocity *= knockback_resistance
 	
-func _recibir_damage(amount):
+func take_damage(amount):
 	health -= amount
 	if health <= 0:
 		die()

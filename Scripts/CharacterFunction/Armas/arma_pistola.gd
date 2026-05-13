@@ -1,9 +1,26 @@
 extends Area2D
 
-
+#ignora player
+#ignora paredes
+#ignora tilemap
+#apunta solo enemigos
 func _physics_process(delta):
-	var enemigo_en_rango = get_overlapping_bodies()
-	if enemigo_en_rango.size() > 0:
-		var enemigo_apuntado = enemigo_en_rango[0]
-		look_at(enemigo_apuntado.global_position)
-		
+	var enemies = get_tree().get_nodes_in_group("Enemy")
+
+	if enemies.is_empty():
+		return
+
+	var nearest = null
+	var min_dist = INF
+
+	for e in enemies:
+		if !is_instance_valid(e):
+			continue
+
+		var dist = global_position.distance_to(e.global_position)
+		if dist < min_dist:
+			min_dist = dist
+			nearest = e
+	if nearest:
+		look_at(nearest.global_position)
+	
