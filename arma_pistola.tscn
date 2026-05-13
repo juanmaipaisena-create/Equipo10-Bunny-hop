@@ -22,8 +22,8 @@ animations = [{
 }]
 
 [node name="armas" type="Area2D" unique_id=27617337]
-collision_layer = 0
-collision_mask = 2
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_meu16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304746984]

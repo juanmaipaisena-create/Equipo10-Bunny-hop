@@ -39,23 +39,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2pop"]
-size = Vector2(18, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ag3k0"]
+radius = 4.0
 
 [node name="Bala" type="Area2D" unique_id=1228280289]
+light_mask = 4
+visibility_layer = 2
 collision_layer = 4
 script = ExtResource("1_ag3k0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1681673305]
-position = Vector2(9, 0)
-scale = Vector2(0.28125, 1)
+scale = Vector2(0.12499999, 1)
 sprite_frames = SubResource("SpriteFrames_hv006")
 animation = &"Movimiento_bala"
 frame = 3
 frame_progress = 0.40377113
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052500148]
-position = Vector2(9, 0)
-shape = SubResource("RectangleShape2D_f2pop")
+shape = SubResource("CircleShape2D_ag3k0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

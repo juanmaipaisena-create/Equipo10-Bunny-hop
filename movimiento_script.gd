@@ -30,8 +30,7 @@ func get_input():
 		else:
 			last_direction = "Up"
 	update_animation("Run")
-	velocity = direccion *230
-	velocity.normalized()
+	velocity = direccion.normalized() * 230
 
 func update_animation(state):
 	animated_sprite.play(state + last_direction)
@@ -40,7 +39,7 @@ func update_animation(state):
 
 func _process(delta):
 	if can_shoot:
-		#_shoot()
+		can_shoot = false
 		_auto_shoot()
 
 #aparecen enemigos
@@ -50,9 +49,10 @@ func _shoot(target_position: Vector2):
 	can_shoot = false
 	var bullet = bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
-	bullet.global_position = global_position
+	#bullet.global_position = global_position
 	var direction = (target_position - global_position).normalized()
 	bullet.direction = direction
+	bullet.global_position = global_position + (direction * 30)
 	await get_tree().create_timer(shoot_cooldown).timeout
 	can_shoot = true
 	
@@ -78,5 +78,6 @@ func _get_nearest_enemy():
 func _auto_shoot():
 	var enemy = _get_nearest_enemy()
 	if enemy == null:
+		can_shoot = true
 		return
 	_shoot(enemy.global_position)

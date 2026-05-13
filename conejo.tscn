@@ -3,8 +3,6 @@
 [ext_resource type="Script" path="res://movimiento_script.gd" id="1_kdei8"]
 [ext_resource type="Texture2D" uid="uid://dwu3gsq4jki5c" path="res://CharactersSprites/Conejo/Sprite-conejito-idle-Sheet.png" id="1_rwaau"]
 [ext_resource type="PackedScene" uid="uid://c06ktikrfef85" path="res://bala.tscn" id="2_huqc7"]
-[ext_resource type="Texture2D" uid="uid://gmjjbcwxliaf" path="res://CharactersSprites/Serpiente/Sprite-idle-serpiente-Sheet.png" id="2_kdei8"]
-[ext_resource type="Texture2D" uid="uid://iowjbv8u8j78" path="res://CharactersSprites/Cerdo/(C)Sprite-cerdito-caminata.png" id="3_1ovkj"]
 [ext_resource type="Texture2D" uid="uid://dcmujm7q6lqj0" path="res://CharactersSprites/Conejo/conejo_idle_izquierda.png" id="4_ngn5s"]
 [ext_resource type="PackedScene" uid="uid://c4xlul8isegeq" path="res://arma_pistola.tscn" id="5_1ovkj"]
 [ext_resource type="Texture2D" uid="uid://ck4rycltfq0js" path="res://CharactersSprites/Conejo/conejo_idle_derecha.png" id="5_leqea"]
@@ -109,70 +107,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_12rtb"]
 atlas = ExtResource("10_ppeaa")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nha2g"]
-atlas = ExtResource("2_kdei8")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bn0x"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7n71"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_prngn"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hq5fo"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rl2iq"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_644nv"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knmac"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gykuw"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d05gg"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8jbxr"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_edwr0"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ql1ih"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8r58"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_762b4"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3yaeo"]
-atlas = ExtResource("3_1ovkj")
-region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qopjo"]
 animations = [{
@@ -287,261 +221,13 @@ animations = [{
 "loop": true,
 "name": &"RunUp",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nha2g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bn0x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m7n71")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_prngn")
-}],
-"loop": true,
-"name": &"WalkBack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hq5fo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rl2iq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_644nv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knmac")
-}],
-"loop": true,
-"name": &"WalkFront",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gykuw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d05gg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8jbxr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_edwr0")
-}],
-"loop": true,
-"name": &"WalkLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ql1ih")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i8r58")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_762b4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3yaeo")
-}],
-"loop": true,
-"name": &"WalkRight",
-"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_huqc7"]
 radius = 7.071068
 
-[sub_resource type="Animation" id="Animation_sps8e"]
-resource_name = "Idle"
-length = 0.46666667
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_bnlop"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ey15c"]
-resource_name = "WalkBack"
-length = 0.76666665
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"WalkBack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_oaeeq"]
-resource_name = "WalkFront"
-length = 0.76666665
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"WalkFront"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_p1837"]
-resource_name = "WalkLeft"
-length = 0.76666665
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"WalkLeft"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_qv2vy"]
-resource_name = "WalkRight"
-length = 0.76666665
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ConejoAnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"WalkRight"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConejoAnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oaeeq"]
-_data = {
-&"Idle": SubResource("Animation_sps8e"),
-&"RESET": SubResource("Animation_bnlop"),
-&"WalkBack": SubResource("Animation_ey15c"),
-&"WalkFront": SubResource("Animation_oaeeq"),
-&"WalkLeft": SubResource("Animation_p1837"),
-&"WalkRight": SubResource("Animation_qv2vy")
-}
-
 [node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097]
+light_mask = 4
 position = Vector2(219, 148)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_kdei8")
@@ -549,15 +235,14 @@ bullet_scene = ExtResource("2_huqc7")
 
 [node name="ConejoAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900692145]
 sprite_frames = SubResource("SpriteFrames_qopjo")
-animation = &"Idle"
+animation = &"IdleDown"
 autoplay = "IdleDown"
 
 [node name="ConejoCollisionShape2D" type="CollisionShape2D" parent="." unique_id=351098022]
 position = Vector2(-0.6666666, 8)
 shape = SubResource("CircleShape2D_huqc7")
 
-[node name="ConejoAnimationPlayer" type="AnimationPlayer" parent="." unique_id=734541239]
-libraries/ = SubResource("AnimationLibrary_oaeeq")
-
 [node name="Area2D" parent="." unique_id=27617337 instance=ExtResource("5_1ovkj")]
 position = Vector2(-1.2516975e-06, -3.8146973e-06)
+
+[node name="armas" parent="." unique_id=257264843 instance=ExtResource("5_1ovkj")]

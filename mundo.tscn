@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
 [ext_resource type="Script" uid="uid://6r5ukawwku2b" path="res://wave_manager.gd" id="4_otwa2"]
-[ext_resource type="PackedScene" uid="uid://c4xlul8isegeq" path="res://arma_pistola.tscn" id="5_aou4a"]
 [ext_resource type="PackedScene" uid="uid://dqtsoxwwjq28f" path="res://tile_map_layer.tscn" id="6_5ckkb"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
 [node name="SerpienteBody2D" parent="." unique_id=1554647834 instance=ExtResource("2_fw4w5")]
 position = Vector2(747, 98)
+velocidad = 80.0
 
 [node name="ConejoBody2D" parent="." unique_id=262121097 groups=["Player"] instance=ExtResource("2_lgngo")]
 z_index = 10
@@ -33,7 +33,5 @@ position = Vector2(196, 437)
 
 [node name="Spawn3" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1502301823]
 position = Vector2(509, 194)
-
-[node name="armas" parent="." unique_id=27617337 instance=ExtResource("5_aou4a")]
 
 [node name="TileMapLayer" parent="." unique_id=1661436757 instance=ExtResource("6_5ckkb")]
