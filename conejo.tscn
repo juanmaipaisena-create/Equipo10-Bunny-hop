@@ -118,6 +118,17 @@ animations = [{
 "texture": SubResource("AtlasTexture_iojcs")
 }],
 "loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwiel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iojcs")
+}],
+"loop": true,
 "name": &"IdleDown",
 "speed": 5.0
 }, {
