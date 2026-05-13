@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://8fnxym4spudp" path="res://Scripts/CharacterFunction/Serpiente/Serpiente.gd" id="1_tfflr"]
 [ext_resource type="Texture2D" uid="uid://dlqbljiwndt3b" path="res://CharactersSprites/Serpiente/Sprite-movimientoH-serpiente-Sheet.png" id="2_u4jas"]
 [ext_resource type="Texture2D" uid="uid://cng324b8vnuaq" path="res://CharactersSprites/Serpiente/Sprite-movimienoV-serpiente-Sheet.png" id="3_tcpjq"]
+[ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="5_g77lv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nha2g"]
 atlas = ExtResource("1_bhs4r")
@@ -68,12 +69,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfflr"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g77lv"]
+radius = 8.809074
+
 [node name="SerpienteBody2D" type="CharacterBody2D" unique_id=1554647834 groups=["Enemy"]]
-position = Vector2(407, 210)
+position = Vector2(403, 209)
 scale = Vector2(2.5, 2.5)
 collision_mask = 4
 script = ExtResource("1_tfflr")
-velocidad = 60
 metadata/_edit_group_ = true
 
 [node name="SerpienteAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
@@ -85,3 +88,13 @@ flip_h = true
 [node name="SerpienteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]
 position = Vector2(0.79999995, 4.7999988)
 shape = SubResource("CircleShape2D_tfflr")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=762862252]
+visibility_layer = 4
+collision_layer = 4
+script = ExtResource("5_g77lv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=906066468]
+shape = SubResource("CircleShape2D_g77lv")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -5,7 +5,9 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown := 0.3
 var can_shoot := true
-var last_direction = "Down"
+var last_direction := "Down"
+var health := 10
+var invincible := false
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -81,3 +83,40 @@ func _auto_shoot():
 		can_shoot = true
 		return
 	_shoot(enemy.global_position)
+# --------------------------
+# VIDA / DAÑO
+# --------------------------
+func take_damage(amount: int) -> void:
+	if invincible:
+		return
+
+	health -= amount
+	print("Vida:", health)
+
+	hit_feedback()
+
+	if health <= 0:
+		die()
+
+func hit_feedback() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.05)
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.05)
+
+	start_invincibility()
+
+func start_invincibility() -> void:
+	invincible = true
+	modulate = Color(1, 0.4, 0.4)
+
+	await get_tree().create_timer(1.0).timeout
+
+	modulate = Color(1, 1, 1)
+	invincible = false
+
+func die() -> void:
+	print("Game Over")
+	call_deferred("_die_deferred")
+	
+func _die_deferred():
+	queue_free()

@@ -224,12 +224,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_huqc7"]
-radius = 7.071068
+radius = 23.333328
 
-[node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097]
+[node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097 groups=["Player"]]
 light_mask = 4
 position = Vector2(219, 148)
 scale = Vector2(1.5, 1.5)
+collision_mask = 4
 script = ExtResource("1_kdei8")
 bullet_scene = ExtResource("2_huqc7")
 
