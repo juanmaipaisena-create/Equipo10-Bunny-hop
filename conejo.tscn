@@ -235,7 +235,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_huqc7"]
-radius = 23.333328
+radius = 8.6666565
 
 [node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097 groups=["Player"]]
 light_mask = 4
@@ -253,8 +253,5 @@ autoplay = "IdleDown"
 [node name="ConejoCollisionShape2D" type="CollisionShape2D" parent="." unique_id=351098022]
 position = Vector2(-0.6666666, 8)
 shape = SubResource("CircleShape2D_huqc7")
-
-[node name="Area2D" parent="." unique_id=27617337 instance=ExtResource("5_1ovkj")]
-position = Vector2(-1.2516975e-06, -3.8146973e-06)
 
 [node name="armas" parent="." unique_id=257264843 instance=ExtResource("5_1ovkj")]
