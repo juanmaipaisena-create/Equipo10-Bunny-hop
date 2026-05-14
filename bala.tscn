@@ -52,7 +52,7 @@ script = ExtResource("1_ag3k0")
 scale = Vector2(0.12499999, 1)
 sprite_frames = SubResource("SpriteFrames_hv006")
 animation = &"Movimiento_bala"
-frame = 3
+frame = 2
 frame_progress = 0.40377113
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052500148]

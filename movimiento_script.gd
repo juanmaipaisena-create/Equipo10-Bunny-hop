@@ -12,6 +12,12 @@ var invincible := false
 func _physics_process(delta: float) -> void:
 	get_input()
 	move_and_slide()
+	var limite_izq = 0
+	var limite_der = 864
+	var limite_sup = 0
+	var limite_inf = 480
+	global_position.x = clamp(global_position.x, limite_izq, limite_der)
+	global_position.y = clamp(global_position.y, limite_sup, limite_inf)
 
 func get_input():
 	var direccion = Input.get_vector("ui_left","ui_right","ui_up","ui_down")

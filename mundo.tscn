@@ -8,13 +8,11 @@
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
-[node name="SerpienteBody2D" parent="." unique_id=1554647834 instance=ExtResource("2_fw4w5")]
-position = Vector2(747, 98)
-velocidad = 80.0
+[node name="TileMapLayer" parent="." unique_id=1661436757 instance=ExtResource("6_5ckkb")]
 
-[node name="ConejoBody2D" parent="." unique_id=262121097 groups=["Player"] instance=ExtResource("2_lgngo")]
+[node name="ConejoBody2D" parent="." unique_id=262121097 instance=ExtResource("2_lgngo")]
 z_index = 10
-position = Vector2(381, 349)
+position = Vector2(432.00003, 239.00002)
 
 [node name="arbolito" parent="." unique_id=1110573105 instance=ExtResource("3_fw4w5")]
 position = Vector2(256, 365)
@@ -26,12 +24,25 @@ enemy_scene = ExtResource("2_fw4w5")
 [node name="SpawnPoints" type="Node2D" parent="WaveManager" unique_id=389698855]
 
 [node name="Spawn1" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1650890541]
-position = Vector2(224, 209)
+position = Vector2(43, 240)
 
 [node name="Spawn2" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=997558371]
-position = Vector2(196, 437)
+position = Vector2(450, 459)
 
 [node name="Spawn3" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1502301823]
-position = Vector2(509, 194)
+position = Vector2(823, 249)
 
-[node name="TileMapLayer" parent="." unique_id=1661436757 instance=ExtResource("6_5ckkb")]
+[node name="Spawn4" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1969409531]
+position = Vector2(444, 26)
+
+[node name="arbolito2" parent="." unique_id=289286312 instance=ExtResource("3_fw4w5")]
+position = Vector2(80, 142)
+
+[node name="arbolito3" parent="." unique_id=511522848 instance=ExtResource("3_fw4w5")]
+position = Vector2(721, 269)
+
+[node name="arbolito4" parent="." unique_id=106019197 instance=ExtResource("3_fw4w5")]
+position = Vector2(559, 140)
+
+[node name="arbolito5" parent="." unique_id=1702266754 instance=ExtResource("3_fw4w5")]
+position = Vector2(290, 101)
