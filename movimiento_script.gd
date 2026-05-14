@@ -9,7 +9,7 @@ extends CharacterBody2D
 var knockback_velocity := Vector2.ZERO
 var can_shoot := true
 var last_direction := "Down"
-var health := 10
+var health := 10.0
 var invincible := false
 #var base_scale := Vector2(1, 1)
 #var target_scale := Vector2(1, 1)
@@ -129,6 +129,8 @@ func take_damage(amount: int) -> void:
 	#que el personaje no se haga mas pequeño ni desaparezca
 	target_scale = base_scale * 1
 	hit_feedback()
+	
+	%ProgressBar.value=health
 
 	if health <= 0:
 		die()
