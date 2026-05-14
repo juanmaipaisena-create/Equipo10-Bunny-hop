@@ -52,6 +52,6 @@ func apply_knockback(force: Vector2):
 	knockback_velocity += force
 
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		body.take_damage(1)
+#func _on_hitbox_body_entered(body: Node2D) -> void:
+	#if body.is_in_group("Player"):
+		#body.take_damage(1)
