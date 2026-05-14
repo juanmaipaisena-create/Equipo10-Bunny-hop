@@ -4,14 +4,28 @@ extends CharacterBody2D
 @onready var animated_sprite = $ConejoAnimatedSprite2D
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown := 0.3
+@export var knockback_friction := 0.85
+
+var knockback_velocity := Vector2.ZERO
 var can_shoot := true
 var last_direction := "Down"
 var health := 10
 var invincible := false
+#var base_scale := Vector2(1, 1)
+#var target_scale := Vector2(1, 1)
+var base_scale := Vector2.ONE
+var target_scale := Vector2.ONE
 
 func _physics_process(delta: float) -> void:
 	get_input()
 	move_and_slide()
+	
+	# desaceleración del knockback
+	knockback_velocity *= knockback_friction
+	# aplicar scale
+	target_scale = target_scale.lerp(base_scale, 1.5 * delta)
+	self.scale = self.scale.lerp(target_scale, 10 * delta)
+	
 	var limite_izq = 0
 	var limite_der = 864
 	var limite_sup = 0
@@ -20,30 +34,44 @@ func _physics_process(delta: float) -> void:
 	global_position.y = clamp(global_position.y, limite_sup, limite_inf)
 
 func get_input():
-	var direccion = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	
-	if direccion == Vector2.ZERO:
-		velocity = Vector2.ZERO
-		update_animation("Idle")
-		return
-	
-	if abs(direccion.x) > abs (direccion.y):
-		if direccion.x > 0:
-			last_direction = "Right"
+	var direccion = Input.get_vector(
+		"ui_left",
+		"ui_right",
+		"ui_up",
+		"ui_down"
+	)
+
+	var move_velocity = Vector2.ZERO
+
+	if direccion != Vector2.ZERO:
+
+		if abs(direccion.x) > abs(direccion.y):
+			if direccion.x > 0:
+				last_direction = "Right"
+			else:
+				last_direction = "Left"
 		else:
-			last_direction = "Left"
+			if direccion.y > 0:
+				last_direction = "Down"
+			else:
+				last_direction = "Up"
+
+		update_animation("Run")
+
+		move_velocity = direccion.normalized() * 230
+
 	else:
-		if direccion.y > 0:
-			last_direction = "Down"
-		else:
-			last_direction = "Up"
-	update_animation("Run")
-	velocity = direccion.normalized() * 230
+		update_animation("Idle")
+	
+	#knockback o empuje a player
+	velocity = move_velocity + knockback_velocity
 
 func update_animation(state):
 	animated_sprite.play(state + last_direction)
-#func _ready() -> void:
-#	$ConejoAnimatedSprite2D.play("Idle")
+
+func _ready() -> void:
+	base_scale = self.scale
+	target_scale = base_scale
 
 func _process(delta):
 	if can_shoot:
@@ -98,17 +126,17 @@ func take_damage(amount: int) -> void:
 
 	health -= amount
 	print("Vida:", health)
-
+	#que el personaje no se haga mas pequeño ni desaparezca
+	target_scale = base_scale * 1
 	hit_feedback()
 
 	if health <= 0:
 		die()
 
 func hit_feedback() -> void:
-	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.05)
-	tween.tween_property(self, "scale", Vector2(1, 1), 0.05)
-
+	#var tween = create_tween()
+	#tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.05)
+	#tween.tween_property(self, "scale", Vector2(1, 1), 0.05)
 	start_invincibility()
 
 func start_invincibility() -> void:
@@ -126,3 +154,6 @@ func die() -> void:
 	
 func _die_deferred():
 	queue_free()
+
+func apply_knockback(force: Vector2):
+	knockback_velocity += force

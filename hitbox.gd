@@ -16,6 +16,8 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
+			var push_direction = (body.global_position - global_position).normalized()
+			body.apply_knockback(push_direction * 250)
 		_start_cooldown()
 
 
