@@ -237,6 +237,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_huqc7"]
 radius = 8.6666565
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yqt3"]
+bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtfh6"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097 groups=["Player"]]
 light_mask = 4
 position = Vector2(219, 148)
@@ -255,3 +269,15 @@ position = Vector2(-0.6666666, 8)
 shape = SubResource("CircleShape2D_huqc7")
 
 [node name="armas" parent="." unique_id=257264843 instance=ExtResource("5_1ovkj")]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1148795664]
+unique_name_in_owner = true
+offset_left = -17.999996
+offset_top = -19.333336
+offset_right = 18.66669
+offset_bottom = -15.333336
+theme_override_styles/background = SubResource("StyleBoxFlat_5yqt3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mtfh6")
+max_value = 10.0
+value = 10.0
+show_percentage = false
