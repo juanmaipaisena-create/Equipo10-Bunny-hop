@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://da6mcc8321cin" path="res://conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
 [ext_resource type="Script" uid="uid://6r5ukawwku2b" path="res://wave_manager.gd" id="4_otwa2"]
+[ext_resource type="Script" uid="uid://ci8ldnybpb3m2" path="res://hud.gd" id="6_2hh7m"]
 [ext_resource type="PackedScene" uid="uid://dqtsoxwwjq28f" path="res://tile_map_layer.tscn" id="6_5ckkb"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
@@ -46,3 +47,22 @@ position = Vector2(559, 140)
 
 [node name="arbolito5" parent="." unique_id=1702266754 instance=ExtResource("3_fw4w5")]
 position = Vector2(290, 101)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1209386749]
+script = ExtResource("6_2hh7m")
+
+[node name="WaveLabel" type="Label" parent="HUD" unique_id=689791075]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="EnemiesLabel" type="Label" parent="HUD" unique_id=1473234997]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TimeLabel" type="Label" parent="HUD" unique_id=767740459]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthBar" type="Label" parent="HUD" unique_id=923367201]
+offset_right = 40.0
+offset_bottom = 23.0
