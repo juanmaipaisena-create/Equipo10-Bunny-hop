@@ -1,24 +1,64 @@
 [gd_scene format=3 uid="uid://c4xlul8isegeq"]
 
-[ext_resource type="Texture2D" uid="uid://eofplbx7ty21" path="res://CharactersSprites/Armas/pistola-Sheet.png" id="1_aposp"]
 [ext_resource type="Script" uid="uid://m7fmvfq5qovk" path="res://Scripts/CharacterFunction/Armas/arma_pistola.gd" id="1_meu16"]
+[ext_resource type="Texture2D" uid="uid://cbu36g40sill3" path="res://CharactersSprites/Armas/disparo-Sheet.png" id="2_meu16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_meu16"]
 radius = 94.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twipk"]
-atlas = ExtResource("1_aposp")
+atlas = ExtResource("2_meu16")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kurjv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kurjv"]
+atlas = ExtResource("2_meu16")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th0m5"]
+atlas = ExtResource("2_meu16")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt1cs"]
+atlas = ExtResource("2_meu16")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gidgy"]
+atlas = ExtResource("2_meu16")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rwjm"]
+atlas = ExtResource("2_meu16")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcmwp"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twipk")
-}],
+"frames": [],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twipk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kurjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th0m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt1cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gidgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rwjm")
+}],
+"loop": true,
+"name": &"sprite_disparo",
+"speed": 20.0
 }]
 
 [node name="armas" type="Area2D" unique_id=27617337]
@@ -29,12 +69,20 @@ script = ExtResource("1_meu16")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304746984]
 shape = SubResource("CircleShape2D_meu16")
 
+[node name="Timer" type="Timer" parent="." unique_id=2053597877]
+wait_time = 0.3
+autostart = true
+
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1419846673]
 
 [node name="Pistola" type="AnimatedSprite2D" parent="Marker2D" unique_id=1441856988]
 position = Vector2(14, 1)
-sprite_frames = SubResource("SpriteFrames_kurjv")
-frame_progress = 0.22123706
+sprite_frames = SubResource("SpriteFrames_dcmwp")
+animation = &"sprite_disparo"
+frame = 1
+frame_progress = 0.0616097
 
 [node name="Punto de Disparo" type="Marker2D" parent="Marker2D/Pistola" unique_id=709951472]
 position = Vector2(6, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

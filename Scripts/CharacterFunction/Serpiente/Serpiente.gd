@@ -1,6 +1,7 @@
 class_name Serpiente
 extends CharacterBody2D
 
+@onready var animation_snake = $SerpienteAnimatedSprite2D
 @export var vida:int = 10
 @export var velocidad:float = 80.0
 @export var damage:int = 1
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 	_movimiento()
+	animation()
 
 func _movimiento() -> void:
 	var direction = player.global_position - global_position
@@ -36,7 +38,10 @@ func _movimiento() -> void:
 	velocity = (direction * velocidad) + (separation * separation_force) + knockback_velocity
 	move_and_slide()
 	knockback_velocity *= knockback_resistance
-	
+
+func animation():
+	animation_snake.play("Idle")
+
 func take_damage(amount):
 	health -= amount
 	if health <= 0:
