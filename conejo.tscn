@@ -253,7 +253,6 @@ corner_radius_bottom_left = 4
 
 [node name="ConejoBody2D" type="CharacterBody2D" unique_id=262121097 groups=["Player"]]
 light_mask = 4
-position = Vector2(219, 148)
 scale = Vector2(1.5, 1.5)
 collision_mask = 4
 script = ExtResource("1_kdei8")
