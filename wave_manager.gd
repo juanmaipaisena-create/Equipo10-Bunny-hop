@@ -3,7 +3,7 @@ extends Node
 
 @export var enemy_scene: PackedScene
 @onready var spawn_points = $"./SpawnPoints".get_children()
-#@onready var hud = $"../HUD"
+@onready var hud = $"../CanvasLayer/HUD"
 
 @export var wave_time := 20.0
 @export var max_waves := 10
@@ -20,33 +20,38 @@ var wave_timer := 0.0
 
 func _ready():
 	#Iniciar la primera horda
+	await get_tree().process_frame #espera un frame antes de iniciar wave
 	start_wave()
 
 func _process(delta):
 	if not wave_active:
 		return
 
-	# countdown de la wave
 	wave_timer -= delta
-	
-	# mientras se pueda spawnear
+	hud.update_time(wave_timer)
+	hud.update_enemies(enemies_alive)
+
 	if spawning:
 		spawn_timer -= delta
 		if spawn_timer <= 0:
 			spawn_enemy()
 			spawn_timer = spawn_interval
-		# termina fase de spawn
 		if wave_timer <= 0:
 			spawning = false
-			print("Fin de spawn")
 
 func end_wave():
+	if not is_inside_tree():
+		return
+
 	wave_active = false
 	print("Wave terminada:", current_wave)
-
-	# dificultad progresiva
 	spawn_interval = max(0.3, spawn_interval * 0.9)
-	await get_tree().create_timer(2.0).timeout
+	var tree = get_tree()
+
+	if tree == null:
+		return
+
+	await tree.create_timer(2.0).timeout
 	start_wave()
 
 #Iniciar la primera horda
@@ -58,9 +63,10 @@ func start_wave():
 	current_wave += 1
 	wave_active = true
 	spawning = true
-
 	wave_timer = wave_time
 	spawn_timer = 0.5
+
+	hud.update_wave(current_wave)
 	print("Wave:", current_wave)
 
 #Spawnear enemigo
@@ -74,15 +80,13 @@ func spawn_enemy():
 	enemy.global_position = spawner.global_position
 	enemies_alive += 1
 	# conexión automática
-	enemy.tree_exited.connect(_on_enemy_died)
+	enemy.enemy_died.connect(_on_enemy_died)
 
 #Detectar cuando mueren
 func _on_enemy_died():
-	enemies_alive -= 1
-	print("Enemigos vivos:", enemies_alive)
-
-	# si terminó el spawn Y no quedan enemigos
-	if not spawning and enemies_alive <= 0:
+	enemies_alive = max(0, enemies_alive - 1)
+	hud.update_enemies(enemies_alive)
+	if not spawning and enemies_alive == 0:
 		end_wave()
 
 #Siguiente wave
