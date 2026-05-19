@@ -48,21 +48,25 @@ position = Vector2(559, 140)
 [node name="arbolito5" parent="." unique_id=1702266754 instance=ExtResource("3_fw4w5")]
 position = Vector2(290, 101)
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1209386749]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1209386749]
+
+[node name="HUD" type="Control" parent="CanvasLayer" unique_id=1437060599]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("6_2hh7m")
 
-[node name="WaveLabel" type="Label" parent="HUD" unique_id=689791075]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD" unique_id=669691047]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 89.0
+theme_override_constants/separation = 10
 
-[node name="EnemiesLabel" type="Label" parent="HUD" unique_id=1473234997]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="WaveLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=689791075]
+layout_mode = 2
 
-[node name="TimeLabel" type="Label" parent="HUD" unique_id=767740459]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="TimeLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=767740459]
+layout_mode = 2
 
-[node name="HealthBar" type="Label" parent="HUD" unique_id=923367201]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="EnemiesLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=1473234997]
+layout_mode = 2
