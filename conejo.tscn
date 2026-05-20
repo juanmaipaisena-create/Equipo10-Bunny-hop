@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://da6mcc8321cin"]
+[gd_scene format=3 uid="uid://bn10wv8tjt8um"]
 
 [ext_resource type="Script" path="res://movimiento_script.gd" id="1_kdei8"]
 [ext_resource type="Texture2D" uid="uid://dwu3gsq4jki5c" path="res://CharactersSprites/Conejo/Sprite-conejito-idle-Sheet.png" id="1_rwaau"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://lqc1h3347kr" path="res://CharactersSprites/Conejo/caminata_conejo_izquierda.png" id="8_0qxsp"]
 [ext_resource type="Texture2D" uid="uid://bcegi6awnl4cd" path="res://CharactersSprites/Conejo/caminata_derecha.png" id="9_07coi"]
 [ext_resource type="Texture2D" uid="uid://d08ubicogv0c6" path="res://CharactersSprites/Conejo/caminata_arriba.png" id="10_ppeaa"]
+[ext_resource type="Script" uid="uid://8m60vo3sorrt" path="res://Scripts/state_machine.gd" id="12_mtfh6"]
+[ext_resource type="Script" uid="uid://bltmb4au4gs2i" path="res://Scripts/CharacterStates/StateIdle.gd" id="13_ngn5s"]
+[ext_resource type="Script" uid="uid://d28x4jxu5hbr6" path="res://Scripts/CharacterStates/move_state.gd" id="14_leqea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwiel"]
 atlas = ExtResource("1_rwaau")
@@ -280,3 +283,13 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_mtfh6")
 max_value = 10.0
 value = 10.0
 show_percentage = false
+
+[node name="StateMachine" type="Node" parent="." unique_id=112248316]
+script = ExtResource("12_mtfh6")
+default_state_path = NodePath("idle_state")
+
+[node name="idle_state" type="Node" parent="StateMachine" unique_id=1538881369]
+script = ExtResource("13_ngn5s")
+
+[node name="move_state" type="Node" parent="StateMachine" unique_id=615150133]
+script = ExtResource("14_leqea")
