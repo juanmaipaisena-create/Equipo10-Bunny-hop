@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown := 0.3
 @export var knockback_friction := 0.85
+@export var speed := 230.0
 
 var knockback_velocity := Vector2.ZERO
 var can_shoot := true
@@ -17,56 +18,19 @@ var base_scale := Vector2.ONE
 var target_scale := Vector2.ONE
 
 func _physics_process(delta: float) -> void:
-	get_input()
 	move_and_slide()
-	
 	# desaceleración del knockback
 	knockback_velocity *= knockback_friction
 	# aplicar scale
 	target_scale = target_scale.lerp(base_scale, 1.5 * delta)
 	self.scale = self.scale.lerp(target_scale, 10 * delta)
-	
-	var limite_izq = 0
-	var limite_der = 864
-	var limite_sup = 0
-	var limite_inf = 480
-	global_position.x = clamp(global_position.x, limite_izq, limite_der)
-	global_position.y = clamp(global_position.y, limite_sup, limite_inf)
+	_apply_limits()
 
-func get_input():
-	var direccion = Input.get_vector(
-		"ui_left",
-		"ui_right",
-		"ui_up",
-		"ui_down"
-	)
+func _apply_limits():
+	global_position.x = clamp(global_position.x, 0, 864)
+	global_position.y = clamp(global_position.y, 0, 480)
 
-	var move_velocity = Vector2.ZERO
-
-	if direccion != Vector2.ZERO:
-
-		if abs(direccion.x) > abs(direccion.y):
-			if direccion.x > 0:
-				last_direction = "Right"
-			else:
-				last_direction = "Left"
-		else:
-			if direccion.y > 0:
-				last_direction = "Down"
-			else:
-				last_direction = "Up"
-
-		update_animation("Run")
-
-		move_velocity = direccion.normalized() * 230
-
-	else:
-		update_animation("Idle")
-	
-	#knockback o empuje a player
-	velocity = move_velocity + knockback_velocity
-
-func update_animation(state):
+func play_animation(state:String):
 	animated_sprite.play(state + last_direction)
 
 func _ready() -> void:
