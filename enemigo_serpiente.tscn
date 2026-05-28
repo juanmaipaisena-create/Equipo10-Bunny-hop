@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dlqbljiwndt3b" path="res://CharactersSprites/Serpiente/Sprite-movimientoH-serpiente-Sheet.png" id="2_u4jas"]
 [ext_resource type="Texture2D" uid="uid://cng324b8vnuaq" path="res://CharactersSprites/Serpiente/Sprite-movimienoV-serpiente-Sheet.png" id="3_tcpjq"]
 [ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="5_g77lv"]
+[ext_resource type="Script" uid="uid://8m60vo3sorrt" path="res://Scripts/state_machine.gd" id="6_2fx3d"]
+[ext_resource type="Script" uid="uid://bwha6dbn6i88g" path="res://chase_state.gd" id="8_yoert"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nha2g"]
 atlas = ExtResource("1_bhs4r")
@@ -81,8 +83,6 @@ script = ExtResource("1_tfflr")
 scale = Vector2(0.62500006, 0.6875)
 sprite_frames = SubResource("SpriteFrames_r61e5")
 animation = &"Idle"
-frame = 1
-frame_progress = 0.6731104
 flip_h = true
 
 [node name="SerpienteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]
@@ -97,5 +97,12 @@ script = ExtResource("5_g77lv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=906066468]
 position = Vector2(1.5999999, 4.3999996)
 shape = SubResource("CircleShape2D_g77lv")
+
+[node name="StateMachine" type="Node" parent="." unique_id=14125029]
+script = ExtResource("6_2fx3d")
+default_state_path = NodePath("chase_state")
+
+[node name="chase_state" type="Node" parent="StateMachine" unique_id=1550221448]
+script = ExtResource("8_yoert")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
