@@ -1,11 +1,11 @@
-class_name Serpiente
+class_name Arana
 extends CharacterBody2D
 
-@onready var animation_snake = $SerpienteAnimatedSprite2D
+@onready var animation_snake = $AranaAnimatedSprite2D
 @export var vida:int = 10
-@export var velocidad:float = 150.0
-@export var damage:int = 1
-@export var health := 3
+@export var velocidad:float = 100.0
+@export var damage:int = 3
+@export var health := 30
 @export var knockback_resistance := 0.9
 @export var separation_force := 40.0
 @export var detection_radius := 200.0

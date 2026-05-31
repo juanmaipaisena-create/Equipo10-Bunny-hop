@@ -1,22 +1,26 @@
 class_name WaveManager
 extends Node
 
-@export var enemy_scene: PackedScene
+@export var enemy_scene: PackedScene #serpiente
+@export var miniboss_scene: PackedScene #arana
 @onready var spawn_points = $"./SpawnPoints".get_children()
 @onready var hud = $"../CanvasLayer/HUD"
 
 @export var wave_time := 20.0
 @export var max_waves := 10
 @export var spawn_interval := 1.0
+@export var miniboss_spawn_time := 10.0#60.0 #arana
+
 
 #testeamos con 3 y el release con 10
-var wave := 3
+var wave := 10
 var enemies_alive := 0
 var current_wave := 0
 var wave_active := false
 var spawning := false
 var spawn_timer := 0.0
 var wave_timer := 0.0
+var miniboss_timer := 10.0#60.0 #arana
 
 func _ready():
 	#Iniciar la primera horda
@@ -24,6 +28,12 @@ func _ready():
 	start_wave()
 
 func _process(delta):
+	miniboss_timer -= delta
+	
+	if miniboss_timer <= 0:
+		_spawn_miniboss()
+		miniboss_timer = miniboss_spawn_time
+		
 	if not wave_active:
 		return
 
@@ -39,6 +49,22 @@ func _process(delta):
 		if wave_timer <= 0:
 			spawning = false
 
+func _spawn_miniboss():
+	if miniboss_scene == null:
+		print("MINIBOSS SCENE NO ASIGNADA")
+		return
+		
+	if spawn_points.is_empty():
+		return
+
+	var spawner = spawn_points.pick_random()
+	var miniboss = miniboss_scene.instantiate()
+	get_tree().current_scene.add_child(miniboss)
+	miniboss.global_position = spawner.global_position
+	enemies_alive += 1
+	miniboss.enemy_died.connect(_on_enemy_died)
+	print("MINIBOSS SPAWN")
+	
 func end_wave():
 	if not is_inside_tree():
 		return
