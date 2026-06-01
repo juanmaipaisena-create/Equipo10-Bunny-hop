@@ -109,10 +109,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfflr"]
-radius = 6.0
+radius = 10.8074045
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g77lv"]
-radius = 6.0
+radius = 10.799999
 
 [node name="AranaBody2D" type="CharacterBody2D" unique_id=1554647834 groups=["Enemy"]]
 scale = Vector2(2.5, 2.5)
@@ -126,7 +126,7 @@ animation = &"WalkVertical"
 flip_h = true
 
 [node name="AranaCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]
-position = Vector2(1.5999999, 4.3999987)
+position = Vector2(2.842171e-14, 10)
 shape = SubResource("CircleShape2D_tfflr")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=762862252]
@@ -135,7 +135,7 @@ collision_layer = 4
 script = ExtResource("5_onys5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=906066468]
-position = Vector2(1.5999999, 4.3999996)
+position = Vector2(2.842171e-14, 10.000002)
 shape = SubResource("CircleShape2D_g77lv")
 
 [node name="StateMachine" type="Node" parent="." unique_id=14125029]

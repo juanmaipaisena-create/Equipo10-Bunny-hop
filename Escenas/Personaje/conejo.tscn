@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://movimiento_script.gd" id="1_kdei8"]
 [ext_resource type="Texture2D" uid="uid://dwu3gsq4jki5c" path="res://CharactersSprites/Conejo/Sprite-conejito-idle-Sheet.png" id="1_rwaau"]
-[ext_resource type="PackedScene" uid="uid://c06ktikrfef85" path="res://bala.tscn" id="2_huqc7"]
+[ext_resource type="PackedScene" uid="uid://c06ktikrfef85" path="res://Escenas/Armas/bala.tscn" id="2_huqc7"]
 [ext_resource type="Texture2D" uid="uid://dcmujm7q6lqj0" path="res://CharactersSprites/Conejo/conejo_idle_izquierda.png" id="4_ngn5s"]
-[ext_resource type="PackedScene" uid="uid://c4xlul8isegeq" path="res://arma_pistola.tscn" id="5_1ovkj"]
+[ext_resource type="PackedScene" uid="uid://c4xlul8isegeq" path="res://Escenas/Armas/arma_pistola.tscn" id="5_1ovkj"]
 [ext_resource type="Texture2D" uid="uid://ck4rycltfq0js" path="res://CharactersSprites/Conejo/conejo_idle_derecha.png" id="5_leqea"]
 [ext_resource type="Texture2D" uid="uid://c7qs1u82t0jpf" path="res://CharactersSprites/Conejo/conejo_idle_arriba.png" id="6_jlxoy"]
 [ext_resource type="Texture2D" uid="uid://b3jxfyue2r2mv" path="res://CharactersSprites/Conejo/caminata_abajo.png" id="7_pymwi"]
