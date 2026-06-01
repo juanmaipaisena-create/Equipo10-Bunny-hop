@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c3pr71dwtjlv0"]
 
-[ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://enemigo_serpiente.tscn" id="2_fw4w5"]
-[ext_resource type="PackedScene" uid="uid://bn10wv8tjt8um" path="res://conejo.tscn" id="2_lgngo"]
+[ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://Escenas/Enemigos/enemigo_serpiente.tscn" id="2_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://bn10wv8tjt8um" path="res://Escenas/Personaje/conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
 [ext_resource type="Script" uid="uid://6r5ukawwku2b" path="res://wave_manager.gd" id="4_otwa2"]
 [ext_resource type="Script" uid="uid://ci8ldnybpb3m2" path="res://hud.gd" id="6_2hh7m"]
 [ext_resource type="PackedScene" uid="uid://dqtsoxwwjq28f" path="res://tile_map_layer.tscn" id="6_5ckkb"]
-[ext_resource type="PackedScene" uid="uid://dyptg8nxma3mo" path="res://enemigo_arana.tscn" id="6_t8jxu"]
+[ext_resource type="PackedScene" uid="uid://dyptg8nxma3mo" path="res://Escenas/Enemigos/enemigo_arana.tscn" id="6_t8jxu"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
@@ -23,20 +23,21 @@ position = Vector2(256, 365)
 script = ExtResource("4_otwa2")
 enemy_scene = ExtResource("2_fw4w5")
 miniboss_scene = ExtResource("6_t8jxu")
+miniboss_spawn_time = 40.0
 
 [node name="SpawnPoints" type="Node2D" parent="WaveManager" unique_id=389698855]
 
 [node name="Spawn1" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1650890541]
-position = Vector2(-39, 72)
+position = Vector2(-49, 64)
 
 [node name="Spawn2" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=997558371]
-position = Vector2(900, 69)
+position = Vector2(908, 60)
 
 [node name="Spawn3" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1502301823]
-position = Vector2(917, 448)
+position = Vector2(906, 424)
 
 [node name="Spawn4" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1969409531]
-position = Vector2(-37, 422)
+position = Vector2(-40, 417)
 
 [node name="arbolito2" parent="." unique_id=289286312 instance=ExtResource("3_fw4w5")]
 position = Vector2(80, 142)
@@ -72,3 +73,5 @@ layout_mode = 2
 
 [node name="EnemiesLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=1473234997]
 layout_mode = 2
+
+[node name="ConectorMinigames" type="Node" parent="." unique_id=1684685076]

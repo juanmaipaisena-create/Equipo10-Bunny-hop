@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://yxgmvo3d2aek"]
+
+[ext_resource type="Texture2D" uid="uid://du66t2wwfidgv" path="res://Minigames/Pesca/Pez-Sheet.png" id="1_3nsit"]
+[ext_resource type="Texture2D" uid="uid://dy2ixeen2eod5" path="res://Minigames/Pesca/minijuego_pesca_brazoc.png" id="2_0558h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkelv"]
+atlas = ExtResource("2_0558h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urmbb"]
+atlas = ExtResource("2_0558h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p4ta"]
+atlas = ExtResource("2_0558h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_483pb"]
+atlas = ExtResource("2_0558h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy43w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkelv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urmbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p4ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_483pb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lppi3"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r8fr"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14t21"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od1yn"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nx2s"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k2mt"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4srn"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx81y"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcgvk"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21w5j"]
+atlas = ExtResource("1_3nsit")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nan81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lppi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r8fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14t21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od1yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nx2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k2mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4srn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx81y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcgvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21w5j")
+}],
+"loop": true,
+"name": &"saltopez",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nsit"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node" type="Node" unique_id=1459371929]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=479109589]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=698173370]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.24705882)
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=125757794]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gato" type="Node2D" parent="CanvasLayer/Panel" unique_id=1075857879]
+position = Vector2(149, 201)
+
+[node name="garragato" type="AnimatedSprite2D" parent="CanvasLayer/Panel/gato" unique_id=1071114153]
+position = Vector2(1, 3)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_oy43w")
+
+[node name="pez" type="Node2D" parent="CanvasLayer/Panel" unique_id=647018999]
+position = Vector2(35, 202)
+
+[node name="saltopez" type="AnimatedSprite2D" parent="CanvasLayer/Panel/pez" unique_id=1817856427]
+position = Vector2(-2, -2)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_nan81")
+animation = &"saltopez"
+frame = 1
+frame_progress = 0.85841024
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=269078637]
+offset_left = 248.0
+offset_top = 408.0
+offset_right = 624.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nsit")
+text = "ATRAPA AL PEZ"
