@@ -28,7 +28,7 @@ miniboss_spawn_time = 40.0
 [node name="SpawnPoints" type="Node2D" parent="WaveManager" unique_id=389698855]
 
 [node name="Spawn1" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=1650890541]
-position = Vector2(-49, 64)
+position = Vector2(-50, 61)
 
 [node name="Spawn2" type="Marker2D" parent="WaveManager/SpawnPoints" unique_id=997558371]
 position = Vector2(908, 60)

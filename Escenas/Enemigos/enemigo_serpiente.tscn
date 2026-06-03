@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gmjjbcwxliaf" path="res://CharactersSprites/Serpiente/Sprite-idle-serpiente-Sheet.png" id="1_bhs4r"]
 [ext_resource type="Script" uid="uid://8fnxym4spudp" path="res://Scripts/CharacterFunction/Serpiente/Serpiente.gd" id="1_tfflr"]
 [ext_resource type="Texture2D" uid="uid://dlqbljiwndt3b" path="res://CharactersSprites/Serpiente/Sprite-movimientoH-serpiente-Sheet.png" id="2_u4jas"]
+[ext_resource type="Texture2D" uid="uid://basyfqmjn06de" path="res://CharactersSprites/Serpiente/Sprite-movimienoV(a)-serpiente-Sheet.png" id="3_ak83a"]
 [ext_resource type="Texture2D" uid="uid://cng324b8vnuaq" path="res://CharactersSprites/Serpiente/Sprite-movimienoV-serpiente-Sheet.png" id="3_tcpjq"]
 [ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="5_g77lv"]
 [ext_resource type="Script" uid="uid://8m60vo3sorrt" path="res://Scripts/state_machine.gd" id="6_2fx3d"]
@@ -14,6 +15,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtvw4"]
 atlas = ExtResource("1_bhs4r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct256"]
+atlas = ExtResource("3_ak83a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpl7h"]
+atlas = ExtResource("3_ak83a")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r61e5"]
@@ -44,6 +53,17 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct256")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpl7h")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,7 +102,8 @@ script = ExtResource("1_tfflr")
 [node name="SerpienteAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
 scale = Vector2(0.62500006, 0.6875)
 sprite_frames = SubResource("SpriteFrames_r61e5")
-animation = &"Idle"
+animation = &"WalkDown"
+frame_progress = 0.50804853
 flip_h = true
 
 [node name="SerpienteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]
