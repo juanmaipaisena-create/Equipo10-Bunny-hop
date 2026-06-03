@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drr5i3mkgrmcl" path="res://arana.gd" id="1_o2na6"]
 [ext_resource type="Texture2D" uid="uid://d3u4jf8c2bdow" path="res://CharactersSprites/Spider/Sprite-jefeA-idle.png" id="2_xh3kv"]
+[ext_resource type="Texture2D" uid="uid://bnkga2vt1rui5" path="res://CharactersSprites/Spider/Sprite-jefeA-move.png" id="3_1tjd8"]
 [ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="5_onys5"]
 [ext_resource type="Script" uid="uid://8m60vo3sorrt" path="res://Scripts/state_machine.gd" id="6_t85li"]
 [ext_resource type="Script" uid="uid://bwha6dbn6i88g" path="res://chase_state.gd" id="7_c71kv"]
@@ -22,21 +23,17 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("2_xh3kv")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rllmj"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_83uxe"]
+atlas = ExtResource("3_1tjd8")
+region = Rect2(0, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onys5"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7vqr"]
+atlas = ExtResource("3_1tjd8")
+region = Rect2(96, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t85li"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c71kv"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eer04"]
+atlas = ExtResource("3_1tjd8")
+region = Rect2(192, 0, 96, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0tyg"]
 atlas = ExtResource("2_xh3kv")
@@ -75,20 +72,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rllmj")
+"texture": SubResource("AtlasTexture_83uxe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onys5")
+"texture": SubResource("AtlasTexture_n7vqr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t85li")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c71kv")
+"texture": SubResource("AtlasTexture_eer04")
 }],
 "loop": true,
 "name": &"WalkHorizontal",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,7 +99,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkVertical",
-"speed": 4.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfflr"]
@@ -122,7 +116,9 @@ script = ExtResource("1_o2na6")
 [node name="AranaAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
 scale = Vector2(0.62500006, 0.6875)
 sprite_frames = SubResource("SpriteFrames_r61e5")
-animation = &"WalkVertical"
+animation = &"WalkHorizontal"
+frame = 2
+frame_progress = 0.5521333
 flip_h = true
 
 [node name="AranaCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]

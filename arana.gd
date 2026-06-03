@@ -34,7 +34,7 @@ func update_animation_by_direction(direction: Vector2):
 		animation_snake.flip_h = direction.x < 0
 	# vertical
 	else:
-		animation_snake.play("WalkVertical")
+		animation_snake.play("WalkHorizontal")
 
 func take_damage(amount):
 	health -= amount
