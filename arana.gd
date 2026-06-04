@@ -44,6 +44,11 @@ func take_damage(amount):
 signal enemy_died
 
 func die():
+	var connector = get_tree().get_first_node_in_group(
+		"MinigameConnector"
+	)
+	if connector:
+		connector.start_fishing_minigame()
 	enemy_died.emit()
 	queue_free()
 
