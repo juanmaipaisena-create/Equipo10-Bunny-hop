@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://ci8ldnybpb3m2" path="res://hud.gd" id="6_2hh7m"]
 [ext_resource type="PackedScene" uid="uid://dqtsoxwwjq28f" path="res://tile_map_layer.tscn" id="6_5ckkb"]
 [ext_resource type="PackedScene" uid="uid://dyptg8nxma3mo" path="res://Escenas/Enemigos/enemigo_arana.tscn" id="6_t8jxu"]
+[ext_resource type="Script" uid="uid://dw372fdw3yg8t" path="res://conector_minigames.gd" id="8_t8jxu"]
+[ext_resource type="PackedScene" uid="uid://yxgmvo3d2aek" path="res://pesca_minijuego.tscn" id="9_pfhxm"]
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
@@ -74,4 +76,6 @@ layout_mode = 2
 [node name="EnemiesLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=1473234997]
 layout_mode = 2
 
-[node name="ConectorMinigames" type="Node" parent="." unique_id=1684685076]
+[node name="ConectorMinigames" type="Node" parent="." unique_id=1684685076 groups=["MinigameConnector"]]
+script = ExtResource("8_t8jxu")
+pesca_scene = ExtResource("9_pfhxm")
