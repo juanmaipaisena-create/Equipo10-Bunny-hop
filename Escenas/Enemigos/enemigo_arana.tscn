@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyptg8nxma3mo"]
 
 [ext_resource type="Script" uid="uid://drr5i3mkgrmcl" path="res://arana.gd" id="1_o2na6"]
+[ext_resource type="PackedScene" uid="uid://ccrtgrijaa8qq" path="res://Arcade.tscn" id="2_83uxe"]
 [ext_resource type="Texture2D" uid="uid://d3u4jf8c2bdow" path="res://CharactersSprites/Spider/Sprite-jefeA-idle.png" id="2_xh3kv"]
 [ext_resource type="Texture2D" uid="uid://bnkga2vt1rui5" path="res://CharactersSprites/Spider/Sprite-jefeA-move.png" id="3_1tjd8"]
 [ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="5_onys5"]
@@ -112,6 +113,7 @@ radius = 10.799999
 scale = Vector2(2.5, 2.5)
 collision_mask = 4
 script = ExtResource("1_o2na6")
+arcade_scene = ExtResource("2_83uxe")
 
 [node name="AranaAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
 scale = Vector2(0.62500006, 0.6875)
