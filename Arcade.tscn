@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ccrtgrijaa8qq"]
 
+[ext_resource type="Script" uid="uid://h7ynmgu5wsse" path="res://arcade.gd" id="1_hvwyj"]
 [ext_resource type="Texture2D" uid="uid://b6u0ernokh57y" path="res://Minigames/Arcade/humo arcade-Sheet.png" id="1_pk7nq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvwyj"]
@@ -90,7 +91,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qunk7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Arcade",
 "speed": 5.0
 }]
 
@@ -98,14 +99,16 @@ animations = [{
 radius = 13.0
 
 [node name="Node2D" type="Node2D" unique_id=130952585]
+script = ExtResource("1_hvwyj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664278437]
 sprite_frames = SubResource("SpriteFrames_1chmk")
-frame = 11
-frame_progress = 0.63452286
+animation = &"Arcade"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1137652689]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=407948894]
 position = Vector2(-1, 14)
 shape = SubResource("CircleShape2D_23xhq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

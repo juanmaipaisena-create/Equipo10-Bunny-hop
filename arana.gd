@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var knockback_resistance := 0.9
 @export var separation_force := 40.0
 @export var detection_radius := 200.0
+@export var arcade_scene : PackedScene
 
 var player: Node2D = null
 var knockback_velocity := Vector2.ZERO
@@ -44,13 +45,26 @@ func take_damage(amount):
 signal enemy_died
 
 func die():
-	var connector = get_tree().get_first_node_in_group(
-		"MinigameConnector"
-	)
-	if connector:
-		connector.start_fishing_minigame()
+	drop_arcade()
 	enemy_died.emit()
 	queue_free()
 
 func apply_knockback(force: Vector2):
 	knockback_velocity += force
+
+func drop_arcade():
+	if arcade_scene == null:
+		return
+	var arcade = arcade_scene.instantiate()
+	arcade.arcade_collected.connect(
+		_on_arcade_collected
+	)
+	get_tree().current_scene.add_child(arcade)
+	arcade.global_position = global_position
+
+func _on_arcade_collected():
+	var connector = get_tree().get_first_node_in_group(
+		"MinigameConnector"
+	)
+	if connector:
+		connector.start_fishing_minigame()
