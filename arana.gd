@@ -45,10 +45,14 @@ func take_damage(amount):
 signal enemy_died
 
 func die():
+	call_deferred("_die_deferred")
+	
+
+func _die_deferred():
 	drop_arcade()
 	enemy_died.emit()
 	queue_free()
-
+	
 func apply_knockback(force: Vector2):
 	knockback_velocity += force
 
