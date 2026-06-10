@@ -90,9 +90,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qunk7")
 }],
-"loop": true,
+"loop": false,
 "name": &"Arcade",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_23xhq"]
@@ -104,6 +104,8 @@ script = ExtResource("1_hvwyj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664278437]
 sprite_frames = SubResource("SpriteFrames_1chmk")
 animation = &"Arcade"
+frame = 11
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1137652689]
 
