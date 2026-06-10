@@ -2,6 +2,43 @@
 
 [ext_resource type="Script" uid="uid://dvswpdlunxg8u" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://b1830mpguehxl" path="res://mapa.tscn" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://dr0kdl2vgsg1y" path="res://Tileset/Menu-Sheet.png" id="3_mae5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hy44"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(0, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytr4m"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(108, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l48gv"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(216, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecwwl"]
+atlas = ExtResource("3_mae5d")
+region = Rect2(324, 0, 108, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk3ma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hy44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytr4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l48gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecwwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
 bg_color = Color(0, 0, 0, 1)
@@ -19,6 +56,15 @@ grow_vertical = 2
 script = ExtResource("1_ouk20")
 
 [node name="mapita" parent="." unique_id=2060375193 instance=ExtResource("2_mae5d")]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=80467731]
+position = Vector2(432, 240)
+scale = Vector2(8, 7.9999995)
+sprite_frames = SubResource("SpriteFrames_kk3ma")
+autoplay = "default"
+frame = 2
+frame_progress = 0.63616765
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=721383985]
 layout_mode = 1
