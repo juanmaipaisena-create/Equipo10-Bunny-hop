@@ -10,7 +10,8 @@ extends Node
 @export var max_waves := 10
 @export var spawn_interval := 1.0
 @export var miniboss_spawn_time := 10.0#60.0 #arana
-
+var miniboss_spawned_waves: Array[int] = []
+const MINIBOSS_WAVES = [1, 3, 5, 7, 9]
 
 #testeamos con 3 y el release con 10
 var wave := 10
@@ -28,11 +29,6 @@ func _ready():
 	start_wave()
 
 func _process(delta):
-	miniboss_timer -= delta
-	
-	if miniboss_timer <= 0:
-		_spawn_miniboss()
-		miniboss_timer = miniboss_spawn_time
 		
 	if not wave_active:
 		return
@@ -87,13 +83,20 @@ func start_wave():
 		return
 
 	current_wave += 1
+	print("=== INICIANDO WAVE:", current_wave, "===")
 	wave_active = true
 	spawning = true
 	wave_timer = wave_time
 	spawn_timer = 0.5
 
+	# Reinicia el temporizador de miniboss al comenzar la ronda
+	miniboss_timer = miniboss_spawn_time
+	
 	hud.update_wave(current_wave)
 	print("Wave:", current_wave)
+	if current_wave % 2 == 1:
+		print("Generando araña en wave", current_wave)
+		_spawn_miniboss()
 
 #Spawnear enemigo
 func spawn_enemy():
@@ -111,6 +114,14 @@ func spawn_enemy():
 #Detectar cuando mueren
 func _on_enemy_died():
 	enemies_alive = max(0, enemies_alive - 1)
+	print(
+		"Wave:",
+		current_wave,
+		" Enemigos vivos:",
+		enemies_alive,
+		" Spawning:",
+		spawning
+	)
 	hud.update_enemies(enemies_alive)
 	if not spawning and enemies_alive == 0:
 		end_wave()
