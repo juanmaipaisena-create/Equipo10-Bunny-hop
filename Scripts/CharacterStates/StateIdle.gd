@@ -7,10 +7,10 @@ func start():
 
 func on_physics_process(delta):
 	var direction = Input.get_vector(
-		"ui_left",
-		"ui_right",
-		"ui_up",
-		"ui_down"
+		"izquierda",
+		"derecha",
+		"arriba",
+		"abajo"
 	)
 	if direction != Vector2.ZERO:
 		state_machine._change_to("move_state")
