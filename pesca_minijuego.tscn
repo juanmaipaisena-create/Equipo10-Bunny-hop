@@ -3,6 +3,71 @@
 [ext_resource type="Texture2D" uid="uid://du66t2wwfidgv" path="res://Minigames/Pesca/Pez-Sheet.png" id="1_3nsit"]
 [ext_resource type="Script" uid="uid://dom3m71qan6yb" path="res://pesca_minijuego.gd" id="1_0558h"]
 [ext_resource type="Texture2D" uid="uid://dy2ixeen2eod5" path="res://Minigames/Pesca/minijuego_pesca_brazoc.png" id="2_0558h"]
+[ext_resource type="Texture2D" uid="uid://b6ypo7awdiod0" path="res://Minigames/Pesca/minijuego_pesca.png" id="2_lppi3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nan81"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy43w"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64bhy"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnluu"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m3d6"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvw5v"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suvdo"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i6wi"]
+atlas = ExtResource("2_lppi3")
+region = Rect2(448, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1s4p3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nan81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy43w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64bhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnluu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m3d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvw5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suvdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i6wi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mkelv"]
 atlas = ExtResource("2_0558h")
@@ -149,6 +214,12 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="agua" type="AnimatedSprite2D" parent="CanvasLayer/Panel" unique_id=1730071399]
+position = Vector2(151, 151)
+scale = Vector2(4.71875, 9.4375)
+sprite_frames = SubResource("SpriteFrames_1s4p3")
+frame_progress = 1.0
 
 [node name="gato" type="Node2D" parent="CanvasLayer/Panel" unique_id=1075857879]
 position = Vector2(149, 201)

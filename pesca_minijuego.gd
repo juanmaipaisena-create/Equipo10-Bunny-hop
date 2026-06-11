@@ -6,6 +6,9 @@ extends Node
 @onready var gato = $CanvasLayer/Panel/gato
 @onready var gato_sprite = $CanvasLayer/Panel/gato/garragato
 @onready var texto = $CanvasLayer/TextEdit
+
+@onready var agua_sprite = $CanvasLayer/Panel/agua
+
 @export var max_game_time := 7.0
 
 var game_started := false
@@ -24,6 +27,7 @@ func _ready():
 	_start_game()
 	pez_sprite.play("saltopez")
 	gato_sprite.play("default")
+	agua_sprite.play("default")
 
 func _move_fish():
 	var x = randf_range(30, 220)

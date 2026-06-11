@@ -1,6 +1,7 @@
 class_name ConejoPlayer
 extends CharacterBody2D
 
+
 @onready var animated_sprite = $ConejoAnimatedSprite2D
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown := 0.3
@@ -16,6 +17,7 @@ var invincible := false
 #var target_scale := Vector2(1, 1)
 var base_scale := Vector2.ONE
 var target_scale := Vector2.ONE
+
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()

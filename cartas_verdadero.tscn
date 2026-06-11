@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c44fxj00j0a55"]
+
+[ext_resource type="PackedScene" uid="uid://cjni0v6h6m3x0" path="res://cartas_mejoras_escena.tscn" id="1_nc0ik"]
+
+[node name="Node" type="Node" unique_id=1724149647]
+
+[node name="Control" parent="." unique_id=397248127 instance=ExtResource("1_nc0ik")]
