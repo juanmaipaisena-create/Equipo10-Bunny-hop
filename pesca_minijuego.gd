@@ -70,3 +70,4 @@ func _game_over():
 	# Si quieres cerrar automáticamente después de 1 segundo:
 	await get_tree().create_timer(1.0).timeout
 	queue_free()
+	minigame_completed.emit()

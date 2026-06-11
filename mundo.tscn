@@ -50,7 +50,7 @@ radius = 17.029387
 
 [node name="ConejoBody2D" parent="." unique_id=262121097 instance=ExtResource("2_lgngo")]
 z_index = 10
-position = Vector2(432.00003, 239.00002)
+position = Vector2(431, 239.00002)
 shoot_cooldown = 0.5
 
 [node name="arbolito" parent="." unique_id=1110573105 instance=ExtResource("3_fw4w5")]
