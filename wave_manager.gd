@@ -1,4 +1,4 @@
-class_name WaveManager
+class_name WaveManagerViejo
 extends Node
 
 @export var enemy_scene: PackedScene #serpiente
