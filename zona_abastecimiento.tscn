@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c6xlx62khbhpo"]
+
+[ext_resource type="Texture2D" uid="uid://dph7yvb70vio6" path="res://CharactersSprites/Vendedor/tienda-Sheet.png" id="1_15i11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oi55"]
+atlas = ExtResource("1_15i11")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57gmc"]
+atlas = ExtResource("1_15i11")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0crsg"]
+atlas = ExtResource("1_15i11")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5g5eo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oi55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57gmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0crsg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwdvv"]
+radius = 17.029387
+
+[node name="tienda" type="Area2D" unique_id=1784552742]
+process_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032910662]
+sprite_frames = SubResource("SpriteFrames_5g5eo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108444799]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_lwdvv")

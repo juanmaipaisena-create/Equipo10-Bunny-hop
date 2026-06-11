@@ -3,45 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://Escenas/Enemigos/enemigo_serpiente.tscn" id="2_fw4w5"]
 [ext_resource type="PackedScene" uid="uid://bn10wv8tjt8um" path="res://Escenas/Personaje/conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
-[ext_resource type="Script" uid="uid://bbnxrvonouh0k" path="res://wave_manage_copia.gd" id="4_pij3u"]
+[ext_resource type="Script" uid="uid://6r5ukawwku2b" path="res://wave_manager.gd" id="4_otwa2"]
 [ext_resource type="Script" uid="uid://ci8ldnybpb3m2" path="res://hud.gd" id="6_2hh7m"]
 [ext_resource type="PackedScene" uid="uid://dqtsoxwwjq28f" path="res://tile_map_layer.tscn" id="6_5ckkb"]
 [ext_resource type="PackedScene" uid="uid://dyptg8nxma3mo" path="res://Escenas/Enemigos/enemigo_arana.tscn" id="6_t8jxu"]
 [ext_resource type="Script" uid="uid://dw372fdw3yg8t" path="res://conector_minigames.gd" id="8_t8jxu"]
 [ext_resource type="PackedScene" uid="uid://yxgmvo3d2aek" path="res://pesca_minijuego.tscn" id="9_pfhxm"]
-[ext_resource type="Texture2D" uid="uid://dph7yvb70vio6" path="res://CharactersSprites/Vendedor/tienda-Sheet.png" id="10_pij3u"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0oi55"]
-atlas = ExtResource("10_pij3u")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_57gmc"]
-atlas = ExtResource("10_pij3u")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0crsg"]
-atlas = ExtResource("10_pij3u")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5g5eo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0oi55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57gmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0crsg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lwdvv"]
-radius = 17.029387
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
 
@@ -56,7 +23,7 @@ shoot_cooldown = 0.5
 position = Vector2(256, 365)
 
 [node name="WaveManager" type="Node" parent="." unique_id=1068225077]
-script = ExtResource("4_pij3u")
+script = ExtResource("4_otwa2")
 enemy_scene = ExtResource("2_fw4w5")
 miniboss_scene = ExtResource("6_t8jxu")
 wave_time = 30.0
@@ -114,14 +81,3 @@ layout_mode = 2
 [node name="ConectorMinigames" type="Node" parent="." unique_id=1684685076 groups=["MinigameConnector"]]
 script = ExtResource("8_t8jxu")
 pesca_scene = ExtResource("9_pfhxm")
-
-[node name="tienda" type="Area2D" parent="." unique_id=906127321]
-process_mode = 3
-position = Vector2(432, 72)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tienda" unique_id=338613612]
-sprite_frames = SubResource("SpriteFrames_5g5eo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tienda" unique_id=163561717]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_lwdvv")
