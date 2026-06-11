@@ -8,6 +8,30 @@ extends CharacterBody2D
 @export var knockback_friction := 0.85
 @export var speed := 230.0
 
+#====
+#variables de mejoras
+signal stats_updated
+
+enum upgrades {ADD_VELOCIDAD_ATAQUE, ADD_VELOCIDAD}
+
+#mejoras
+var attackSpeedMulti = 0
+var velocityMulti = 0
+
+func add_upgrade(upgrade, stats):
+	if upgrade == upgrades.ADD_VELOCIDAD_ATAQUE:
+		# 'stats' sería un valor como 0.05. Se lo restamos al tiempo de espera para que sea más rápido.
+		shoot_cooldown = max(0.05, shoot_cooldown - stats)
+		print("Nuevo cooldown de disparo: ", shoot_cooldown)
+		
+	elif upgrade == upgrades.ADD_VELOCIDAD:
+		# 'stats' sería un valor como 40.0. Se lo sumamos a la velocidad.
+		speed += stats
+		print("Nueva velocidad de movimiento: ", speed)
+		
+	stats_updated.emit()
+#====
+
 var knockback_velocity := Vector2.ZERO
 var can_shoot := true
 var last_direction := "Down"
