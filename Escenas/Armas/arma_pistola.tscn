@@ -58,7 +58,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"sprite_disparo",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [node name="armas" type="Area2D" unique_id=27617337]
@@ -79,8 +79,8 @@ autostart = true
 position = Vector2(14, 1)
 sprite_frames = SubResource("SpriteFrames_dcmwp")
 animation = &"sprite_disparo"
-frame = 1
-frame_progress = 0.0616097
+frame = 2
+frame_progress = 0.14202254
 
 [node name="Punto de Disparo" type="Marker2D" parent="Marker2D/Pistola" unique_id=709951472]
 position = Vector2(6, 0)
