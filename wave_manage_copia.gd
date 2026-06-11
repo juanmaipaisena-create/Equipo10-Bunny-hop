@@ -8,7 +8,8 @@ extends Node
 
 # === NUEVAS EXPORTACIONES PARA LA TIENDA FÍSICA ===
 @onready var tienda_area: Area2D = $"../tienda"
-@export var escena_mejoras: String = "res://cartas_verdadero.tscn"
+@export var escena_mejoras: PackedScene 
+#@export var escena_mejoras: String = "res://cartas_verdadero.tscn"
 # ====================================================
 
 @export var wave_time := 20.0
@@ -113,16 +114,12 @@ func end_wave():
 # === CUANDO EL PERSONAJE ENTRA EN CONTACTO CON LA TIENDA ===
 func _on_tienda_body_entered(body):
 	# Idealmente verificamos que el cuerpo que entró sea el jugador
-	# Puedes verificarlo por su nombre, su grupo o su script/clase. Ej: if body.is_in_group("Player"):
-	print(body.name, " entró a la tienda.")
-	
-	# Desactivamos la tienda inmediatamente para evitar múltiples detecciones
+	# Puedes verificarlo por su nombre, su grupo o su script/clase. Ej: if body.is_in_group("Player"):	
+	if not body.is_in_group("Player"):
+		return
 	tienda_area.visible = false
-	tienda_area.monitoring = false
-	
-	# Pausamos el juego y nos vamos a las cartas
-	get_tree().paused = true 
-	get_tree().change_scene_to_file(escena_mejoras)
+	tienda_area.set_deferred("monitoring", false)
+	call_deferred("_abrir_mejoras")
 
 # Iniciar la primera horda
 func start_wave():
@@ -173,3 +170,8 @@ func next_wave():
 	if !is_inside_tree():
 		return
 	start_wave()
+
+func _abrir_mejoras():
+	var mejoras = escena_mejoras.instantiate()
+	get_tree().current_scene.add_child(mejoras)
+	get_tree().paused = true
