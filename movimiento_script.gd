@@ -143,7 +143,7 @@ func start_invincibility() -> void:
 func die() -> void:
 	print("Game Over")
 	call_deferred("_die_deferred")
-	
+	get_tree().change_scene_to_file("res://game_over.tscn")
 func _die_deferred():
 	queue_free()
 
