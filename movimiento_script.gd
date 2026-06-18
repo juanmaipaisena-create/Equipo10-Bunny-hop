@@ -8,39 +8,18 @@ extends CharacterBody2D
 @export var knockback_friction := 0.85
 @export var speed := 230.0
 
-#====
+
 #variables de mejoras
 signal stats_updated
-
-enum upgrades {ADD_VELOCIDAD_ATAQUE, ADD_VELOCIDAD}
-
-#mejoras
-var attackSpeedMulti = 0
-var velocityMulti = 0
-
-func add_upgrade(upgrade, stats):
-	if upgrade == upgrades.ADD_VELOCIDAD_ATAQUE:
-		# 'stats' sería un valor como 0.05. Se lo restamos al tiempo de espera para que sea más rápido.
-		shoot_cooldown = max(0.05, shoot_cooldown - stats)
-		print("Nuevo cooldown de disparo: ", shoot_cooldown)
-		
-	elif upgrade == upgrades.ADD_VELOCIDAD:
-		# 'stats' sería un valor como 40.0. Se lo sumamos a la velocidad.
-		speed += stats
-		print("Nueva velocidad de movimiento: ", speed)
-		
-	stats_updated.emit()
-#====
 
 var knockback_velocity := Vector2.ZERO
 var can_shoot := true
 var last_direction := "Down"
 var health := 10.0
 var invincible := false
-#var base_scale := Vector2(1, 1)
-#var target_scale := Vector2(1, 1)
 var base_scale := Vector2.ONE
 var target_scale := Vector2.ONE
+var is_dead := false
 
 
 func _physics_process(delta: float) -> void:
@@ -68,9 +47,7 @@ func _process(delta):
 		can_shoot = false
 		_auto_shoot()
 
-#aparecen enemigos
-#el conejo detecta el más cercano
-#dispara automáticamente
+#aparecen enemigos, el conejo detecta el más cercano, dispara automáticamente
 func _shoot(target_position: Vector2):
 	can_shoot = false
 	var bullet = bullet_scene.instantiate()
@@ -111,24 +88,17 @@ func _auto_shoot():
 # VIDA / DAÑO
 # --------------------------
 func take_damage(amount: int) -> void:
-	if invincible:
+	if invincible or is_dead:
 		return
-
 	health -= amount
-	print("Vida:", health)
 	#que el personaje no se haga mas pequeño ni desaparezca
 	target_scale = base_scale * 1
 	hit_feedback()
-	
-	%ProgressBar.value=health
-
+	%ProgressBar.value = health
 	if health <= 0:
 		die()
 
 func hit_feedback() -> void:
-	#var tween = create_tween()
-	#tween.tween_property(self, "scale", Vector2(1.15, 1.15), 0.05)
-	#tween.tween_property(self, "scale", Vector2(1, 1), 0.05)
 	start_invincibility()
 
 func start_invincibility() -> void:
@@ -141,9 +111,17 @@ func start_invincibility() -> void:
 	invincible = false
 
 func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
 	print("Game Over")
-	call_deferred("_die_deferred")
+	set_physics_process(false)
+	set_process(false)
+	call_deferred("_game_over")
+
+func _game_over():
 	get_tree().change_scene_to_file("res://game_over.tscn")
+	
 func _die_deferred():
 	queue_free()
 
