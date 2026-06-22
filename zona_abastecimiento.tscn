@@ -39,6 +39,9 @@ process_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032910662]
 sprite_frames = SubResource("SpriteFrames_5g5eo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.5906098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108444799]
 position = Vector2(0, 10)
