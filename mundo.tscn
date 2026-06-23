@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dw372fdw3yg8t" path="res://conector_minigames.gd" id="8_t8jxu"]
 [ext_resource type="PackedScene" uid="uid://yxgmvo3d2aek" path="res://pesca_minijuego.tscn" id="9_pfhxm"]
 [ext_resource type="Texture2D" uid="uid://dph7yvb70vio6" path="res://CharactersSprites/Vendedor/tienda-Sheet.png" id="10_pij3u"]
+[ext_resource type="PackedScene" uid="uid://uea1a80yw20w" path="res://moneda.tscn" id="11_57gmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0oi55"]
 atlas = ExtResource("10_pij3u")
@@ -113,9 +114,13 @@ layout_mode = 2
 [node name="EnemiesLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=1473234997]
 layout_mode = 2
 
+[node name="MonedaLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=146681849]
+layout_mode = 2
+
 [node name="ConectorMinigames" type="Node" parent="." unique_id=1684685076 groups=["MinigameConnector"]]
 script = ExtResource("8_t8jxu")
 pesca_scene = ExtResource("9_pfhxm")
+moneda_scene = ExtResource("11_57gmc")
 
 [node name="tienda" type="Area2D" parent="." unique_id=906127321]
 process_mode = 3

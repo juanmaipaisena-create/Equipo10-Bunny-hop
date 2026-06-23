@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://uea1a80yw20w"]
 
 [ext_resource type="Texture2D" uid="uid://b6qvmp6v73r5y" path="res://Minigames/Moneda_sheet.png" id="1_nghqc"]
+[ext_resource type="Script" uid="uid://4vwvd4voh3qm" path="res://moneda.gd" id="1_r4iok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4iok"]
 atlas = ExtResource("1_nghqc")
@@ -52,6 +53,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="moneda" type="AnimatedSprite2D" unique_id=545522895]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nghqc"]
+
+[node name="Area2D" type="Area2D" unique_id=1467995202]
+script = ExtResource("1_r4iok")
+
+[node name="moneda" type="AnimatedSprite2D" parent="." unique_id=545522895]
 sprite_frames = SubResource("SpriteFrames_q66eu")
 frame_progress = 0.961264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=144060443]
+shape = SubResource("CircleShape2D_nghqc")

@@ -10,7 +10,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		"MinigameConnector"
 	)
 	if connector:
-		connector.start_fishing_minigame()
+		connector.start_fishing_minigame(global_position)
 	queue_free()
 
 func _ready():

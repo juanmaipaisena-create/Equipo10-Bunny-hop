@@ -1,5 +1,5 @@
 extends Node
-
+signal coins_changed
 enum upgrades {
 	SPEED,
 	ATTACK_SPEED,
@@ -22,6 +22,7 @@ const UPGRADE_NAMES = {
 # Guardamos el historial de mejoras por si lo necesitás para otra cosa
 var total_speed_upgrades: float = 0.0
 var total_attack_speed_upgrades: float = 0.0
+var coins := 0
 
 func add_upgrade(upgrade_type, stats, player):
 	if upgrade_type == upgrades.SPEED:
@@ -40,3 +41,15 @@ func add_upgrade(upgrade_type, stats, player):
 			# Ejemplo: si el texto dice "+10%", 'stats' es 10. Le restamos 0.05 segundos.
 			player.shoot_cooldown = max(0.05, player.shoot_cooldown - 0.1)
 			print("Cooldown de disparo del personaje reducido a: ", player.shoot_cooldown)
+
+func add_coin(amount := 1):
+	coins += amount
+	coins_changed.emit(coins)
+	print("Monedas:", coins)
+
+func spend_coins(amount):
+	if coins < amount:
+		return false
+	coins -= amount
+	coins_changed.emit(coins)
+	return true
