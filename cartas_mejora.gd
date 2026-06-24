@@ -6,6 +6,7 @@ signal upgrade_selected
 @export var description: String
 @export var upgrade: PlayerStats.upgrades
 @export var value : float = 0
+@export var cost := 1
 
 func _ready():
 	$VBoxContainer/MarginContainer/TextureRect.texture = icon
@@ -15,11 +16,13 @@ func apply_upgrade():
 	#Buscamos al conejo en la escena activa
 	var player = get_tree().get_first_node_in_group("Player")
 	
-	#Le pasamos las 3 cosas a PlayerStats (tipo, cantidad, y el nodo del jugador)
+	if PlayerStats.coins < cost:
+		print("No tienes suficientes monedas")
+		return
+	PlayerStats.coins -= cost
 	PlayerStats.add_upgrade(
 		upgrade,
 		value,
 		player
 	)
-	
 	upgrade_selected.emit()
