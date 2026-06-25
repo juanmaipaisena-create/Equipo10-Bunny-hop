@@ -53,30 +53,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 script = ExtResource("1_ouk20")
 
 [node name="mapita" parent="." unique_id=2060375193 instance=ExtResource("2_mae5d")]
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=80467731]
-position = Vector2(432, 240)
-scale = Vector2(8, 7.9999995)
+position = Vector2(308, 169)
+scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_kk3ma")
 autoplay = "default"
-frame = 2
-frame_progress = 0.63616765
+frame_progress = 0.44754082
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=721383985]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.5
-offset_top = -7.5
-offset_right = 160.5
-offset_bottom = 149.5
+anchors_preset = -1
+anchor_left = 0.38000003
+anchor_top = 0.476
+anchor_right = 0.38000003
+anchor_bottom = 0.476
+offset_left = -160.32
+offset_top = -78.48001
+offset_right = 160.68
+offset_bottom = 78.51999
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
