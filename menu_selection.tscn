@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://byipjq7k243y3"]
+
+[ext_resource type="Script" uid="uid://ctmj2tskkwps5" path="res://menu_selection.gd" id="1_i57o6"]
+[ext_resource type="Texture2D" uid="uid://dr0kdl2vgsg1y" path="res://Tileset/Menu-Sheet.png" id="2_o3kph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv6yg"]
+atlas = ExtResource("2_o3kph")
+region = Rect2(0, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fefs1"]
+atlas = ExtResource("2_o3kph")
+region = Rect2(108, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3qa1"]
+atlas = ExtResource("2_o3kph")
+region = Rect2(216, 0, 108, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccxf5"]
+atlas = ExtResource("2_o3kph")
+region = Rect2(324, 0, 108, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7in5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv6yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fefs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3qa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccxf5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="menu_selection" type="Control" unique_id=1212006698]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i57o6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1277030454]
+position = Vector2(432, 240)
+scale = Vector2(8, 7.9999995)
+sprite_frames = SubResource("SpriteFrames_7in5o")
+autoplay = "default"
+
+[node name="Button_perro" type="Button" parent="." unique_id=1200489257]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 310.0
+offset_right = 355.0
+offset_bottom = 362.0
+text = "PERRO"
+
+[node name="Button_conejo" type="Button" parent="." unique_id=1670570172]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 310.0
+offset_right = 493.0
+offset_bottom = 362.0
+text = "CONEJO"
+
+[node name="Button_cerdo" type="Button" parent="." unique_id=911161197]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 310.0
+offset_right = 629.0
+offset_bottom = 362.0
+text = "CERDO"
+
+[node name="Label" type="Label" parent="." unique_id=618045199]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 240.0
+offset_top = 2.0
+offset_right = 638.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "SELECCIONA TU PERSONAJE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button_perro" to="." method="_on_button_perro_pressed"]
+[connection signal="pressed" from="Button_conejo" to="." method="_on_button_conejo_pressed"]
+[connection signal="pressed" from="Button_cerdo" to="." method="_on_button_cerdo_pressed"]

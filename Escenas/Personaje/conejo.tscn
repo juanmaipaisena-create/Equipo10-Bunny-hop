@@ -263,7 +263,7 @@ bullet_scene = ExtResource("2_huqc7")
 
 [node name="ConejoAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900692145]
 sprite_frames = SubResource("SpriteFrames_qopjo")
-animation = &"IdleDown"
+animation = &"Idle"
 autoplay = "IdleDown"
 
 [node name="ConejoCollisionShape2D" type="CollisionShape2D" parent="." unique_id=351098022]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3pr71dwtjlv0"]
 
+[ext_resource type="Script" uid="uid://bm1r0016e7gqd" path="res://mundo.gd" id="1_0crsg"]
 [ext_resource type="PackedScene" uid="uid://de1pupyai8rgf" path="res://Escenas/Enemigos/enemigo_serpiente.tscn" id="2_fw4w5"]
-[ext_resource type="PackedScene" uid="uid://bn10wv8tjt8um" path="res://Escenas/Personaje/conejo.tscn" id="2_lgngo"]
 [ext_resource type="PackedScene" uid="uid://cm4h0dq52ykn2" path="res://arbolito.tscn" id="3_fw4w5"]
 [ext_resource type="Script" uid="uid://bbnxrvonouh0k" path="res://wave_manage_copia.gd" id="4_pij3u"]
 [ext_resource type="Script" uid="uid://ci8ldnybpb3m2" path="res://hud.gd" id="6_2hh7m"]
@@ -46,13 +46,9 @@ animations = [{
 radius = 17.029387
 
 [node name="Mundo" type="Node2D" unique_id=1173871276]
+script = ExtResource("1_0crsg")
 
 [node name="TileMapLayer" parent="." unique_id=1661436757 instance=ExtResource("6_5ckkb")]
-
-[node name="ConejoBody2D" parent="." unique_id=262121097 instance=ExtResource("2_lgngo")]
-z_index = 10
-position = Vector2(431, 239.00002)
-shoot_cooldown = 0.5
 
 [node name="arbolito" parent="." unique_id=1110573105 instance=ExtResource("3_fw4w5")]
 position = Vector2(256, 365)
@@ -128,6 +124,7 @@ position = Vector2(432, 72)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tienda" unique_id=338613612]
 sprite_frames = SubResource("SpriteFrames_5g5eo")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tienda" unique_id=163561717]
 position = Vector2(0, 10)
