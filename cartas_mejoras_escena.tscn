@@ -52,3 +52,9 @@ layout_mode = 2
 script = ExtResource("2_1nmmc")
 icon = ExtResource("4_j6uum")
 description = "VELOCIDAD ATAQUE"
+cost = 2
+
+[node name="SkipButton" type="Button" parent="." unique_id=1574836083]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
