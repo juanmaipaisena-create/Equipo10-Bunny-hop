@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://barms4arlx5br"]
+
+[ext_resource type="AudioStream" uid="uid://oj302e23wabk" path="res://Musica/8 Bit Music - Action Man (Mega Man Style Chiptune).mp3" id="1_u4ygf"]
+
+[node name="Musica" type="Node" unique_id=1823434657]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=248852678]
+stream = ExtResource("1_u4ygf")
+autoplay = true
