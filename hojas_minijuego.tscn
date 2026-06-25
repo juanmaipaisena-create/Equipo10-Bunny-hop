@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://ru0b7fhv6wj8"]
+
+[ext_resource type="Script" uid="uid://dom3m71qan6yb" path="res://pesca_minijuego.gd" id="1_pxct5"]
+[ext_resource type="Texture2D" uid="uid://waiqpeq7k20f" path="res://Minigames/Barrer hojas/minijuego_barrerhojas6.png" id="2_io6e4"]
+[ext_resource type="Texture2D" uid="uid://b0257c5c27u3c" path="res://Minigames/Barrer hojas/minijuego_barrerhojas1.png" id="3_djwwg"]
+[ext_resource type="Texture2D" uid="uid://dm8h1ul35uhj8" path="res://Minigames/Barrer hojas/minijuego_barrerhojas2.png" id="4_2eece"]
+[ext_resource type="Texture2D" uid="uid://dp0xmo1vht2p3" path="res://Minigames/Barrer hojas/minijuego_barrerhojas3.png" id="5_ovlqe"]
+[ext_resource type="Texture2D" uid="uid://c8sed8m4iygpi" path="res://Minigames/Barrer hojas/minijuego_barrerhojas4.png" id="6_t0wkl"]
+[ext_resource type="Texture2D" uid="uid://bjl77yjo6o0m6" path="res://Minigames/Barrer hojas/minijuego_barrerhojas5.png" id="7_7f27y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nsit"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node" type="Node" unique_id=1459371929]
+process_mode = 2
+script = ExtResource("1_pxct5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=479109589]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=698173370]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.24705882)
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=125757794]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="manzana" type="Node2D" parent="CanvasLayer/Panel" unique_id=1861750115]
+position = Vector2(150, 150)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/manzana" unique_id=1338345095]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_io6e4")
+
+[node name="hoja" type="Node2D" parent="CanvasLayer/Panel" unique_id=622360253]
+position = Vector2(150, 158)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja" unique_id=321237771]
+scale = Vector2(3, 3)
+texture = ExtResource("3_djwwg")
+
+[node name="hoja2" type="Node2D" parent="CanvasLayer/Panel" unique_id=1830350664]
+position = Vector2(150, 110)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja2" unique_id=2031839353]
+scale = Vector2(3, 3)
+texture = ExtResource("4_2eece")
+
+[node name="hoja6" type="Node2D" parent="CanvasLayer/Panel" unique_id=248661212]
+position = Vector2(174, 166)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja6" unique_id=2110063510]
+scale = Vector2(3, 3)
+texture = ExtResource("4_2eece")
+
+[node name="hoja3" type="Node2D" parent="CanvasLayer/Panel" unique_id=947924768]
+position = Vector2(94, 158)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja3" unique_id=1852756957]
+scale = Vector2(3, 3)
+texture = ExtResource("5_ovlqe")
+
+[node name="hoja7" type="Node2D" parent="CanvasLayer/Panel" unique_id=1160913482]
+position = Vector2(142, 182)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja7" unique_id=590859233]
+scale = Vector2(3, 3)
+texture = ExtResource("5_ovlqe")
+
+[node name="hoja4" type="Node2D" parent="CanvasLayer/Panel" unique_id=1028815823]
+position = Vector2(182, 142)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja4" unique_id=1675558202]
+scale = Vector2(3, 3)
+texture = ExtResource("6_t0wkl")
+
+[node name="hoja5" type="Node2D" parent="CanvasLayer/Panel" unique_id=1796943690]
+position = Vector2(134, 134)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/hoja5" unique_id=69069266]
+scale = Vector2(3, 3)
+texture = ExtResource("7_7f27y")
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=269078637]
+offset_left = 120.0
+offset_top = 408.0
+offset_right = 760.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3nsit")
+text = "ENCUENTRA LA MANZANA"

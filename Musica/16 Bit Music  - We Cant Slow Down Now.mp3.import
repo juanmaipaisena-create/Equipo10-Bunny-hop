@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0j8aj6qixtrn"
+path="res://.godot/imported/16 Bit Music  - We Cant Slow Down Now.mp3-167be48f107d6704bdd7653fd35b99c0.mp3str"
+
+[deps]
+
+source_file="res://Musica/16 Bit Music  - We Cant Slow Down Now.mp3"
+dest_files=["res://.godot/imported/16 Bit Music  - We Cant Slow Down Now.mp3-167be48f107d6704bdd7653fd35b99c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

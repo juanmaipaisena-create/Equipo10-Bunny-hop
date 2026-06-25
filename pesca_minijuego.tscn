@@ -222,11 +222,12 @@ sprite_frames = SubResource("SpriteFrames_1s4p3")
 frame_progress = 1.0
 
 [node name="gato" type="Node2D" parent="CanvasLayer/Panel" unique_id=1075857879]
-position = Vector2(149, 201)
+position = Vector2(150, 230)
+metadata/_edit_group_ = true
 
 [node name="garragato" type="AnimatedSprite2D" parent="CanvasLayer/Panel/gato" unique_id=1071114153]
 position = Vector2(1, 3)
-scale = Vector2(6, 6)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_oy43w")
 
 [node name="pez" type="Node2D" parent="CanvasLayer/Panel" unique_id=647018999]
