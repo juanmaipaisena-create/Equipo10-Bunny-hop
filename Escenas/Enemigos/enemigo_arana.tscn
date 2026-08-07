@@ -36,22 +36,6 @@ region = Rect2(96, 0, 96, 48)
 atlas = ExtResource("3_1tjd8")
 region = Rect2(192, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0tyg"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cs0x1"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejfmi"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjlpw"]
-atlas = ExtResource("2_xh3kv")
-region = Rect2(192, 0, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_r61e5"]
 animations = [{
 "frames": [{
@@ -84,23 +68,6 @@ animations = [{
 "loop": true,
 "name": &"WalkHorizontal",
 "speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c0tyg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cs0x1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejfmi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xjlpw")
-}],
-"loop": true,
-"name": &"WalkVertical",
-"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfflr"]
@@ -120,9 +87,7 @@ arcade_scene = ExtResource("2_83uxe")
 [node name="AranaAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767665545]
 scale = Vector2(0.62500006, 0.6875)
 sprite_frames = SubResource("SpriteFrames_r61e5")
-animation = &"WalkHorizontal"
-frame = 2
-frame_progress = 0.5521333
+animation = &"Idle"
 flip_h = true
 
 [node name="AranaCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037849021]

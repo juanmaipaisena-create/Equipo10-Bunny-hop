@@ -1,37 +1,40 @@
 [gd_scene format=3 uid="uid://c4xlul8isegeq"]
 
 [ext_resource type="Script" uid="uid://m7fmvfq5qovk" path="res://Scripts/CharacterFunction/Armas/arma_pistola.gd" id="1_meu16"]
+[ext_resource type="Texture2D" uid="uid://di5px5aepwign" path="res://CharactersSprites/Armas/armasp3.png" id="2_basj1"]
 [ext_resource type="Texture2D" uid="uid://cbu36g40sill3" path="res://CharactersSprites/Armas/disparo-Sheet.png" id="2_meu16"]
+[ext_resource type="Texture2D" uid="uid://x8oncbsfbtin" path="res://CharactersSprites/Armas/armasp2.png" id="3_wngl7"]
+[ext_resource type="Texture2D" uid="uid://bcw0o6cq2cctt" path="res://CharactersSprites/Armas/armasp1.png" id="5_6d1f3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_meu16"]
 radius = 94.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ikg"]
+atlas = ExtResource("2_basj1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl6ms"]
+atlas = ExtResource("3_wngl7")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twipk"]
 atlas = ExtResource("2_meu16")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kurjv"]
-atlas = ExtResource("2_meu16")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_th0m5"]
-atlas = ExtResource("2_meu16")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mt1cs"]
-atlas = ExtResource("2_meu16")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gidgy"]
-atlas = ExtResource("2_meu16")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rwjm"]
-atlas = ExtResource("2_meu16")
-region = Rect2(160, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu5gy"]
+atlas = ExtResource("5_6d1f3")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcmwp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13ikg")
+}],
+"loop": true,
+"name": &"choclo_disparo",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -39,26 +42,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gl6ms")
+}],
+"loop": true,
+"name": &"hueso_disparo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_twipk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kurjv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_th0m5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mt1cs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gidgy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1rwjm")
 }],
 "loop": true,
 "name": &"sprite_disparo",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu5gy")
+}],
+"loop": true,
+"name": &"zanahoria_disparo",
+"speed": 5.0
 }]
 
 [node name="armas" type="Area2D" unique_id=27617337]
@@ -79,8 +83,6 @@ autostart = true
 position = Vector2(14, 1)
 sprite_frames = SubResource("SpriteFrames_dcmwp")
 animation = &"sprite_disparo"
-frame = 2
-frame_progress = 0.14202254
 
 [node name="Punto de Disparo" type="Marker2D" parent="Marker2D/Pistola" unique_id=709951472]
 position = Vector2(6, 0)
