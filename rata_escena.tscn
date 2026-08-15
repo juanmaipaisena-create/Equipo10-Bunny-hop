@@ -38,9 +38,8 @@ radius = 10.799999
 scale = Vector2(2.5, 2.5)
 collision_mask = 4
 script = ExtResource("1_mh33g")
-velocidad = 100.0
 damage = 2
-health = 10
+health = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279091880]
 scale = Vector2(0.99999994, 0.99999994)

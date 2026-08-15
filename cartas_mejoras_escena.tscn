@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c6soqpw4eokmq" path="res://Minigames/Cartas de mejora/carta1.png" id="3_eqd7y"]
 [ext_resource type="Texture2D" uid="uid://oavfjn2a4dd" path="res://Minigames/Cartas de mejora/nuevascartas3.png" id="5_wvdvc"]
 [ext_resource type="Texture2D" uid="uid://ojdpii3uwpiu" path="res://Minigames/Cartas de mejora/nuevascartas2.png" id="6_refmn"]
-[ext_resource type="Texture2D" uid="uid://caklq5jclv88e" path="res://Minigames/Cartas de mejora/nuevascartas1.png" id="7_6vsuy"]
 
 [node name="Control" type="Control" unique_id=397248127]
 process_mode = 3
@@ -62,14 +61,6 @@ icon = ExtResource("6_refmn")
 description = "VELOCIDAD ATAQUE"
 upgrade = 1
 cost = 2
-
-[node name="Panel3" parent="HBoxContainer" unique_id=284278875 instance=ExtResource("1_ddc14")]
-layout_mode = 2
-script = ExtResource("2_1nmmc")
-icon = ExtResource("7_6vsuy")
-description = "DAÑO"
-upgrade = 2
-cost = 3
 
 [node name="SkipButton" type="Button" parent="." unique_id=1574836083]
 layout_mode = 0
