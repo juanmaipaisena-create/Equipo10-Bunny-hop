@@ -1,27 +1,30 @@
 [gd_scene format=3 uid="uid://byipjq7k243y3"]
 
 [ext_resource type="Script" uid="uid://ctmj2tskkwps5" path="res://menu_selection.gd" id="1_i57o6"]
-[ext_resource type="Texture2D" uid="uid://dr0kdl2vgsg1y" path="res://Tileset/Menu-Sheet.png" id="2_o3kph"]
+[ext_resource type="Texture2D" uid="uid://tdsxnv8exx24" path="res://Tileset/menueleccion-Sheet.png" id="2_i57o6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iv6yg"]
-atlas = ExtResource("2_o3kph")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3kph"]
+atlas = ExtResource("2_i57o6")
 region = Rect2(0, 0, 108, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fefs1"]
-atlas = ExtResource("2_o3kph")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv6yg"]
+atlas = ExtResource("2_i57o6")
 region = Rect2(108, 0, 108, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3qa1"]
-atlas = ExtResource("2_o3kph")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fefs1"]
+atlas = ExtResource("2_i57o6")
 region = Rect2(216, 0, 108, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ccxf5"]
-atlas = ExtResource("2_o3kph")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3qa1"]
+atlas = ExtResource("2_i57o6")
 region = Rect2(324, 0, 108, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7in5o"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3kph")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iv6yg")
 }, {
@@ -30,9 +33,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y3qa1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ccxf5")
 }],
 "loop": true,
 "name": &"default",
@@ -59,6 +59,22 @@ offset_top = 310.0
 offset_right = 355.0
 offset_bottom = 362.0
 text = "PERRO"
+
+[node name="Button_erizo" type="Button" parent="." unique_id=1193106743]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 308.0
+offset_right = 747.0
+offset_bottom = 360.0
+text = "ERIZO"
+
+[node name="Button_murci" type="Button" parent="." unique_id=237246321]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 310.0
+offset_right = 229.0
+offset_bottom = 362.0
+text = "MURCIELAGO"
 
 [node name="Button_conejo" type="Button" parent="." unique_id=1670570172]
 layout_mode = 0
@@ -89,5 +105,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button_perro" to="." method="_on_button_perro_pressed"]
+[connection signal="pressed" from="Button_erizo" to="." method="_on_button_erizo_pressed"]
+[connection signal="pressed" from="Button_murci" to="." method="_on_button_murci_pressed"]
 [connection signal="pressed" from="Button_conejo" to="." method="_on_button_conejo_pressed"]
 [connection signal="pressed" from="Button_cerdo" to="." method="_on_button_cerdo_pressed"]
