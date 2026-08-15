@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://6bs0tvgd4kaw"]
 
-[ext_resource type="Script" uid="uid://drr5i3mkgrmcl" path="res://arana.gd" id="1_a6aac"]
-[ext_resource type="PackedScene" uid="uid://ccrtgrijaa8qq" path="res://Arcade.tscn" id="2_3pu2k"]
+[ext_resource type="Script" uid="uid://8fnxym4spudp" path="res://Scripts/CharacterFunction/Serpiente/Serpiente.gd" id="1_mh33g"]
 [ext_resource type="Texture2D" uid="uid://cp4b0sou76gdr" path="res://CharactersSprites/Rat/rata-Sheet.png" id="3_l6cff"]
 [ext_resource type="Script" uid="uid://ctthtt67ex1gk" path="res://hitbox.gd" id="4_5kry1"]
 [ext_resource type="Script" uid="uid://8m60vo3sorrt" path="res://Scripts/state_machine.gd" id="5_5b0ga"]
@@ -38,10 +37,10 @@ radius = 10.799999
 [node name="AranaBody2D" type="CharacterBody2D" unique_id=1554647834 groups=["Enemy"]]
 scale = Vector2(2.5, 2.5)
 collision_mask = 4
-script = ExtResource("1_a6aac")
+script = ExtResource("1_mh33g")
+velocidad = 100.0
 damage = 2
 health = 10
-arcade_scene = ExtResource("2_3pu2k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279091880]
 scale = Vector2(0.99999994, 0.99999994)
