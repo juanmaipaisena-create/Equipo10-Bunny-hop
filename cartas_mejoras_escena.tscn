@@ -46,8 +46,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 script = ExtResource("2_1nmmc")
 icon = ExtResource("3_eqd7y")
-description = "+30 VELOCIDAD"
-cost = 3
+description = "VELOCIDAD MOVIMIENTO"
 
 [node name="Panel" parent="HBoxContainer" unique_id=675888256 instance=ExtResource("1_ddc14")]
 layout_mode = 2

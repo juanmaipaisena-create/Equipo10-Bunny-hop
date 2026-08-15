@@ -260,6 +260,7 @@ scale = Vector2(1.5, 1.5)
 collision_mask = 4
 script = ExtResource("1_kdei8")
 bullet_scene = ExtResource("2_huqc7")
+shoot_cooldown = 0.6
 
 [node name="ConejoAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900692145]
 sprite_frames = SubResource("SpriteFrames_qopjo")
